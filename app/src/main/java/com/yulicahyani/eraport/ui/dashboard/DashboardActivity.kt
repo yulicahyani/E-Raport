@@ -8,6 +8,7 @@ import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityDashboardBinding
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
+import com.yulicahyani.eraport.ui.profil.ProfilActivity
 import com.yulicahyani.eraport.ui.raport.RaportActivity
 
 class DashboardActivity : AppCompatActivity() {
@@ -22,6 +23,16 @@ class DashboardActivity : AppCompatActivity() {
         val item = activityDashboardBinding.navigation.menu.findItem(R.id.nav_dashboard)
         item.setChecked(true)
         navigationListener()
+
+        activityDashboardBinding.user.setOnClickListener {
+            val intent = Intent(this@DashboardActivity, ProfilActivity::class.java)
+            startActivity(intent)
+        }
+
+        activityDashboardBinding.tvNama.setOnClickListener {
+            val intent = Intent(this@DashboardActivity, ProfilActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
@@ -56,8 +67,5 @@ class DashboardActivity : AppCompatActivity() {
             false
         }
     }
-
-
-
 
 }
