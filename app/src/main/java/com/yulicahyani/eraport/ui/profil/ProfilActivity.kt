@@ -26,6 +26,11 @@ class ProfilActivity : AppCompatActivity() {
         val item = activityProfilBinding.navigation.menu.findItem(R.id.nav_dashboard)
         item.setChecked(true)
         navigationListener()
+
+        activityProfilBinding.btnEdit.setOnClickListener {
+            val intent = Intent(this@ProfilActivity, EditProfilActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun navigationListener() {

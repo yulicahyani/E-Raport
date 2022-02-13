@@ -46,7 +46,7 @@
             android:background="@color/white"
             android:ems="10"
             android:hint="Username"
-            android:inputType="textEmailAddress"
+            android:inputType="textPersonName"
             android:paddingTop="28dp"
             android:textColor="@color/nav_unselected" />
 
