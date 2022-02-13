@@ -3,6 +3,7 @@ package com.yulicahyani.eraport.ui.inputnilai
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityInputNilaiBinding
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
@@ -17,6 +18,9 @@ class InputNilaiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityInputNilaiBinding = ActivityInputNilaiBinding.inflate(layoutInflater)
         setContentView(activityInputNilaiBinding.root)
+
+        val actionBar: ActionBar? = supportActionBar
+        actionBar?.title = "Input Nilai"
 
         val item = activityInputNilaiBinding.navigation.menu.findItem(R.id.nav_input_nilai)
         item.setChecked(true)

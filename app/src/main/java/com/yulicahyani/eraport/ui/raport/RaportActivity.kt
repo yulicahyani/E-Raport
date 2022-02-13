@@ -3,6 +3,7 @@ package com.yulicahyani.eraport.ui.raport
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityRaportBinding
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
@@ -17,6 +18,9 @@ class RaportActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityRaportBinding = ActivityRaportBinding.inflate(layoutInflater)
         setContentView(activityRaportBinding.root)
+
+        val actionBar: ActionBar? = supportActionBar
+        actionBar?.title = "Raport"
 
         val item = activityRaportBinding.navigation.menu.findItem(R.id.nav_raport)
         item.setChecked(true)

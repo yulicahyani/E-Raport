@@ -11,7 +11,8 @@
         android:theme="@style/Theme.ERaport">
         <activity android:name=".ui.raport.RaportActivity"></activity>
         <activity android:name=".ui.profil.ProfilActivity" />
-        <activity android:name=".ui.login.LoginActivity">
+        <activity
+            android:name=".ui.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

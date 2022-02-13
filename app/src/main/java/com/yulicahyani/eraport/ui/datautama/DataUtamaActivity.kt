@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.appcompat.app.ActionBar
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityDataUtamaBinding
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
@@ -18,6 +19,9 @@ class DataUtamaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityDataUtamaBinding = ActivityDataUtamaBinding.inflate(layoutInflater)
         setContentView(activityDataUtamaBinding.root)
+
+        val actionBar: ActionBar? = supportActionBar
+        actionBar?.title = "Data Utama"
 
         val item = activityDataUtamaBinding.navigation.menu.findItem(R.id.nav_data_utama)
         item.setChecked(true)
