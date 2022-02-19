@@ -3,9 +3,10 @@ package com.yulicahyani.eraport.ui.dashboard
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityDashboardBinding
+import com.yulicahyani.eraport.helper.Constant
+import com.yulicahyani.eraport.helper.PrefHelper
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
 import com.yulicahyani.eraport.ui.profil.ProfilActivity
@@ -14,6 +15,7 @@ import com.yulicahyani.eraport.ui.raport.RaportActivity
 class DashboardActivity : AppCompatActivity() {
 
     private lateinit var activityDashboardBinding: ActivityDashboardBinding
+    lateinit var prefHelper: PrefHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +23,13 @@ class DashboardActivity : AppCompatActivity() {
         setContentView(activityDashboardBinding.root)
 
         val item = activityDashboardBinding.navigation.menu.findItem(R.id.nav_dashboard)
-        item.setChecked(true)
+        item.isChecked = true
         navigationListener()
+
+        prefHelper = PrefHelper(this)
+        val fullName = StringBuilder()
+        activityDashboardBinding.tvNama.text = fullName.append(prefHelper.getString(Constant.PREF_FIRSTNAME)).append(" ").append(prefHelper.getString(Constant.PREF_LASTNAME))
+
 
         activityDashboardBinding.user.setOnClickListener {
             val intent = Intent(this@DashboardActivity, ProfilActivity::class.java)
