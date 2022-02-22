@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityProfilBinding
+import com.yulicahyani.eraport.helper.Constant
+import com.yulicahyani.eraport.helper.PrefHelper
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
@@ -14,6 +16,7 @@ import com.yulicahyani.eraport.ui.raport.RaportActivity
 class ProfilActivity : AppCompatActivity() {
 
     private lateinit var activityProfilBinding: ActivityProfilBinding
+    lateinit var prefHelper: PrefHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +25,16 @@ class ProfilActivity : AppCompatActivity() {
 
         val actionBar: ActionBar? = supportActionBar
         actionBar?.title = "Profil"
+
+        prefHelper = PrefHelper(this)
+        val fullName = StringBuilder()
+        activityProfilBinding.nama.text = fullName.append(prefHelper.getString(Constant.PREF_FIRSTNAME)).append(" ").append(prefHelper.getString(Constant.PREF_LASTNAME))
+        activityProfilBinding.username.text = prefHelper.getString(Constant.PREF_USERNAME)
+        activityProfilBinding.password.text = prefHelper.getString(Constant.PREF_PASSWORD)
+        activityProfilBinding.email.text = prefHelper.getString(Constant.PREF_EMAIL)
+        activityProfilBinding.role.text = prefHelper.getString(Constant.PREF_ROLE)
+        activityProfilBinding.namaSekolah.text = prefHelper.getString(Constant.PREF_SEKOLAH)
+        activityProfilBinding.alamatSekolah.text = prefHelper.getString(Constant.PREF_ALAMAT_SEKOLAH)
 
         val item = activityProfilBinding.navigation.menu.findItem(R.id.nav_dashboard)
         item.setChecked(true)

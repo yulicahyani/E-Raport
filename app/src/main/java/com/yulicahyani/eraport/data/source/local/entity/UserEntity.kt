@@ -7,10 +7,12 @@ import kotlinx.parcelize.Parcelize
 data class UserEntity(
     var id_user: Int?,
     var id_sekolah: Int?,
+    var email: String = "",
     var username: String = "",
     var password: String = "",
     var firstname: String = "",
     var lastname: String = "",
     var role: String = "",
-    var nama_sekolah: String = ""
+    var nama_sekolah: String = "",
+    var alamat_sekolah: String = ""
 ): Parcelable

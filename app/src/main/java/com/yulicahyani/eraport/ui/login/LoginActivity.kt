@@ -59,12 +59,14 @@ class LoginActivity : AppCompatActivity() {
                             val user = UserEntity(
                                 id_user = userResponse?.id_user?.toIntOrNull(),
                                 id_sekolah = userResponse?.id_sekolah?.toIntOrNull(),
+                                email = userResponse?.email.toString(),
                                 username = userResponse?.username.toString(),
                                 password = userResponse?.password.toString(),
                                 firstname = userResponse?.firstname.toString(),
                                 lastname = userResponse?.lastname.toString(),
                                 role = userResponse?.role.toString(),
-                                nama_sekolah =  userResponse?.nama_sekolah.toString()
+                                nama_sekolah =  userResponse?.nama_sekolah.toString(),
+                                alamat_sekolah =  userResponse?.alamat.toString(),
                             )
 
                             saveSession(user)
@@ -105,12 +107,14 @@ class LoginActivity : AppCompatActivity() {
     private fun saveSession(user : UserEntity){
         prefHelper.put( Constant.PREF_ID_USER, user.id_user)
         prefHelper.put( Constant.PREF_ID_SEKOLAH, user.id_sekolah)
+        prefHelper.put( Constant.PREF_EMAIL, user.email)
         prefHelper.put( Constant.PREF_USERNAME, user.username )
         prefHelper.put( Constant.PREF_PASSWORD, user.password )
         prefHelper.put( Constant.PREF_FIRSTNAME, user.firstname )
         prefHelper.put( Constant.PREF_LASTNAME, user.lastname )
         prefHelper.put( Constant.PREF_ROLE, user.role )
         prefHelper.put( Constant.PREF_SEKOLAH, user.nama_sekolah )
+        prefHelper.put( Constant.PREF_ALAMAT_SEKOLAH, user.alamat_sekolah )
         prefHelper.put( Constant.PREF_IS_LOGIN, true)
     }
 }

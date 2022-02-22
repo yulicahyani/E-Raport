@@ -2,7 +2,6 @@ package com.yulicahyani.eraport.data.source.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-
 data class LoginResponse(
     @field:SerializedName("status")
     val status: Int,
@@ -22,6 +21,9 @@ data class ResultsUser(
     @field:SerializedName("id_sekolah")
     val id_sekolah: String,
 
+    @field:SerializedName("email")
+    val email: String,
+
     @field:SerializedName("username")
     val username: String,
 
@@ -39,4 +41,7 @@ data class ResultsUser(
 
     @field:SerializedName("nama_sekolah")
     val nama_sekolah: String,
+
+    @field:SerializedName("alamat")
+    val alamat: String,
 )
