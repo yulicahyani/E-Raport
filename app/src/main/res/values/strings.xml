@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">eRaport</string>
+    <string name="icon_add_grade">icon add nilai</string>
+    <string name="ki_spiritual">KI - 1 Spiritual</string>
+    <string name="ki_sikapsosial">KI - 2 Sikap Sosial</string>
+    <string name="ki_pengetahuan">KI - 3 Pengetahuan</string>
+    <string name="ki_keterampilan">KI - 4 Keterampilan</string>
+    <string name="see_all">lihat semua</string>
+    <string name="datauser">Data User</string>
+    <string name="datasiswa">Data Siswa</string>
+    <string name="datamapel">Data Mapel</string>
 </resources>
