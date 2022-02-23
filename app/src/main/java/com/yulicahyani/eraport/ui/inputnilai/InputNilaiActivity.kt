@@ -3,14 +3,17 @@ package com.yulicahyani.eraport.ui.inputnilai
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.ActionBar
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityInputNilaiBinding
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
+import com.yulicahyani.eraport.ui.inputnilai.listmapel.ListMapelActivity
+import com.yulicahyani.eraport.ui.inputnilai.listsiswa.ListSiswaActivity
 import com.yulicahyani.eraport.ui.raport.RaportActivity
 
-class InputNilaiActivity : AppCompatActivity() {
+class InputNilaiActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var activityInputNilaiBinding: ActivityInputNilaiBinding
 
@@ -25,6 +28,12 @@ class InputNilaiActivity : AppCompatActivity() {
         val item = activityInputNilaiBinding.navigation.menu.findItem(R.id.nav_input_nilai)
         item.setChecked(true)
         navigationListener()
+
+        activityInputNilaiBinding.cdSpiritual.setOnClickListener(this)
+        activityInputNilaiBinding.cdSikapsosial.setOnClickListener(this)
+        activityInputNilaiBinding.cdPengetahuan.setOnClickListener(this)
+        activityInputNilaiBinding.cdKeterampilan.setOnClickListener(this)
+
     }
 
     private fun navigationListener() {
@@ -56,6 +65,37 @@ class InputNilaiActivity : AppCompatActivity() {
                 }
             }
             false
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when (v){
+            activityInputNilaiBinding.cdSpiritual ->{
+                intentListUser("Spiritual")
+            }
+            activityInputNilaiBinding.cdSikapsosial -> {
+                intentListUser("Sosial")
+            }
+            activityInputNilaiBinding.cdPengetahuan -> {
+                intentListMapel("Pengetahuan")
+            }
+            activityInputNilaiBinding.cdKeterampilan -> {
+                intentListMapel("Keterampilan")
+            }
+        }
+    }
+
+    private  fun intentListUser(nameActivity : String){
+        Intent(this@InputNilaiActivity, ListSiswaActivity::class.java).also {
+            it.putExtra(ListSiswaActivity.EXTRA_FROM_ACTIVITY, nameActivity)
+            startActivity(it)
+        }
+    }
+
+    private  fun intentListMapel(nameActivity : String){
+        Intent(this@InputNilaiActivity, ListMapelActivity::class.java).also {
+            it.putExtra(ListMapelActivity.EXTRA_FROM_ACTIVITY, nameActivity)
+            startActivity(it)
         }
     }
 }

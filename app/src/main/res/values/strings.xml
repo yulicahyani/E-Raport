@@ -9,4 +9,14 @@
     <string name="datauser">Data User</string>
     <string name="datasiswa">Data Siswa</string>
     <string name="datamapel">Data Mapel</string>
+    <string name="name_siswa">Nama Siswa</string>
+    <string name="nama_mapel">Nama Mapel</string>
+    <string name="nilai_harian">Nilai Harian</string>
+    <string name="nilai_uts">Nilai UTS</string>
+    <string name="nilai_uas">Nilai UAS</string>
+    <string name="nilai_akhir_kd">Nilai Akhir KD</string>
+    <string name="nilai_pengetahuan">Nilai Pengetahuan</string>
+    <string name="nilai_keterampialan">Nilai Keterampialan</string>
+    <string name="nilai_sosial">Nilai Sosial</string>
+    <string name="nilai_spiritual">Nilai Spiritual</string>
 </resources>

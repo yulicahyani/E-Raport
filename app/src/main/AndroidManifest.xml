@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yulicahyani.eraport">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ERaport"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.profil.EditProfilActivity"></activity>
+        <activity android:name=".ui.inputnilai.nilaipengetahuan.NilaiPengetahuanActivity"></activity>
+        <activity android:name=".ui.inputnilai.nilaiketerampilan.NilaiKeterampilanActivity" />
+        <activity android:name=".ui.inputnilai.nilaipengetahuan.GradeTypeActivity" />
+        <activity android:name=".ui.inputnilai.listmapel.ListMapelActivity" />
+        <activity android:name=".ui.inputnilai.nilaisikapsosial.NilaiSosialActivity" />
+        <activity android:name=".NilaiSikapSosialActivity" />
+        <activity android:name=".ui.inputnilai.nilaisikapspiritual.NilaiSpiritualActivity" />
+        <activity android:name=".ui.inputnilai.listsiswa.ListSiswaActivity" />
+        <activity android:name=".ui.profil.EditProfilActivity" />
         <activity android:name=".ui.raport.RaportActivity" />
         <activity android:name=".ui.profil.ProfilActivity" />
         <activity android:name=".ui.login.LoginActivity">
@@ -24,7 +32,7 @@
         </activity>
         <activity android:name=".ui.inputnilai.InputNilaiActivity" />
         <activity android:name=".ui.datautama.DataUtamaActivity" />
-        <activity android:name=".ui.dashboard.DashboardActivity"></activity>
+        <activity android:name=".ui.dashboard.DashboardActivity" />
     </application>
 
 </manifest>

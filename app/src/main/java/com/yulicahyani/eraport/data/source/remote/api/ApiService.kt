@@ -1,12 +1,11 @@
 package com.yulicahyani.eraport.data.source.remote.api
 
-import com.yulicahyani.eraport.data.source.remote.response.LoginResponse
-import com.yulicahyani.eraport.data.source.remote.response.SekolahResponse
-import com.yulicahyani.eraport.data.source.remote.response.UpdateResponse
+import com.yulicahyani.eraport.data.source.remote.response.*
 import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
+    //LOGIN
     @FormUrlEncoded
     @POST("eraport.php?function=loginUser")
     fun login(
@@ -14,9 +13,11 @@ interface ApiService {
         @Field("password") password: String
     ): Call<LoginResponse>
 
+    //SEKOLAH
     @GET("eraport.php?function=getAllSekolah")
     fun getAllSekolah(): Call<SekolahResponse>
 
+    //USER
     @FormUrlEncoded
     @POST("eraport.php?function=updateUser")
     fun updateUser(
@@ -29,4 +30,14 @@ interface ApiService {
         @Field("lastname") lastname: String,
         @Field("role") role: String,
     ): Call<UpdateResponse>
+
+    //SISWA
+    @GET("eraport.php?function=getSiswaSekolah")
+    fun getSiswaSekolah(
+        @Query("id_user") id_user: Int
+    ):Call<SiswaResponse>
+
+    //MAPEL
+    @GET("eraport.php?function=getMapel")
+    fun getMapel(): Call<MapelResponse>
 }
