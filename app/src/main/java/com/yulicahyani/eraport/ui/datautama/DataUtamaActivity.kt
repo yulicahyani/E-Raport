@@ -8,7 +8,9 @@ import androidx.appcompat.app.ActionBar
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityDataUtamaBinding
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
+import com.yulicahyani.eraport.ui.datautama.datasiswa.DataSiswaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
+import com.yulicahyani.eraport.ui.profil.ProfilActivity
 import com.yulicahyani.eraport.ui.raport.RaportActivity
 
 class DataUtamaActivity : AppCompatActivity() {
@@ -27,6 +29,11 @@ class DataUtamaActivity : AppCompatActivity() {
         item.setChecked(true)
 
         navigationListener()
+
+        activityDataUtamaBinding.cdDatasiswa.setOnClickListener {
+            val intent = Intent(this@DataUtamaActivity, DataSiswaActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun navigationListener() {

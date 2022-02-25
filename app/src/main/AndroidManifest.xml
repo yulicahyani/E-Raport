@@ -12,12 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ERaport"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.inputnilai.nilaipengetahuan.NilaiPengetahuanActivity"></activity>
+        <activity android:name=".ui.datautama.datasiswa.DetailDataSiswaActivity"></activity>
+        <activity android:name=".ui.datautama.datamapel.DataMapelActivity" />
+        <activity android:name=".ui.datautama.datauser.DataUserActivity" />
+        <activity android:name=".ui.datautama.datasiswa.DataSiswaActivity" />
+        <activity android:name=".ui.inputnilai.nilaipengetahuan.NilaiPengetahuanActivity" />
         <activity android:name=".ui.inputnilai.nilaiketerampilan.NilaiKeterampilanActivity" />
         <activity android:name=".ui.inputnilai.nilaipengetahuan.GradeTypeActivity" />
         <activity android:name=".ui.inputnilai.listmapel.ListMapelActivity" />
         <activity android:name=".ui.inputnilai.nilaisikapsosial.NilaiSosialActivity" />
-        <activity android:name=".NilaiSikapSosialActivity" />
         <activity android:name=".ui.inputnilai.nilaisikapspiritual.NilaiSpiritualActivity" />
         <activity android:name=".ui.inputnilai.listsiswa.ListSiswaActivity" />
         <activity android:name=".ui.profil.EditProfilActivity" />
