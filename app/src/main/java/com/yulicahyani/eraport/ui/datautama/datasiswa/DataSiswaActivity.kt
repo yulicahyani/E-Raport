@@ -48,6 +48,11 @@ class DataSiswaActivity : AppCompatActivity() {
             }
         })
 
+        activityDataSiswaBinding.btnTambahSiswa.setOnClickListener {
+            val intent = Intent(this@DataSiswaActivity, TambahDataSiswaActivity::class.java)
+            startActivity(intent)
+        }
+
         activityDataSiswaBinding.apply {
             rvSiswa.layoutManager = LinearLayoutManager(this@DataSiswaActivity)
             rvSiswa.setHasFixedSize(true)
