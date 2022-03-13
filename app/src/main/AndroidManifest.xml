@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ERaport"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.datautama.datasiswa.DetailDataSiswaActivity"></activity>
+        <activity android:name=".ui.datautama.datasiswa.EditDataSiswaActivity"></activity>
+        <activity android:name=".ui.datautama.datasiswa.DetailDataSiswaActivity" />
         <activity android:name=".ui.datautama.datamapel.DataMapelActivity" />
         <activity android:name=".ui.datautama.datauser.DataUserActivity" />
         <activity android:name=".ui.datautama.datasiswa.DataSiswaActivity" />

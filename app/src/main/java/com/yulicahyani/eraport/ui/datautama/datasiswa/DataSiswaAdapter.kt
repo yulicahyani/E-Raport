@@ -6,16 +6,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yulicahyani.eraport.data.source.remote.response.ResultsSiswa
 import com.yulicahyani.eraport.databinding.ItemDataSiswaBinding
-import com.yulicahyani.eraport.ui.profil.ProfilActivity
 
 class DataSiswaAdapter : RecyclerView.Adapter<DataSiswaAdapter.SiswaViewHolder>() {
 
     private val listData = ArrayList<ResultsSiswa>()
     private lateinit var onItemClickCallback: OnItemClickCallback
-    private lateinit var itemDataSiswaBinding: ItemDataSiswaBinding
+    private lateinit var onEditClickCallback: OnEditClickCallback
 
     fun setOnClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
+    }
+
+    fun setOnEditClickCallback(onEditClickCallback: OnEditClickCallback) {
+        this.onEditClickCallback = onEditClickCallback
     }
 
     fun setData(siswas: ArrayList<ResultsSiswa>) {
@@ -46,6 +49,10 @@ class DataSiswaAdapter : RecyclerView.Adapter<DataSiswaAdapter.SiswaViewHolder>(
                 onItemClickCallback.onItemClicked(siswa)
             }
 
+            binding.edit.setOnClickListener {
+                onEditClickCallback.onEditClicked(siswa)
+            }
+
             binding.apply {
                 tvNameSiswa.text = siswa.nama_siswa
             }
@@ -58,7 +65,7 @@ class DataSiswaAdapter : RecyclerView.Adapter<DataSiswaAdapter.SiswaViewHolder>(
         fun onItemClicked(data: ResultsSiswa)
     }
 
-    interface OnLihatDetailClickCallback{
-        fun onItemClicked(data: ResultsSiswa)
+    interface OnEditClickCallback{
+        fun onEditClicked(data: ResultsSiswa)
     }
 }
