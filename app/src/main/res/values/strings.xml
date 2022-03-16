@@ -19,4 +19,26 @@
     <string name="nilai_keterampialan">Nilai Keterampialan</string>
     <string name="nilai_sosial">Nilai Sosial</string>
     <string name="nilai_spiritual">Nilai Spiritual</string>
+    <string name="penilaian_sikap_spritual">Penilaian Sikap Spritual</string>
+    <string name="nama_siswa">Nama Siswa</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="penilaian">Penilaian</string>
+    <string name="keterangan_nilai">Keterangan Nilai:</string>
+    <string name="verygood">SB : Sangat Baik</string>
+    <string name="good">B : Baik</string>
+    <string name="notgood">PB : Perlu Bimbingan</string>
+    <string name="ketaatan_beribadah">Ketaatan Beribadah</string>
+    <string name="berprilaku_bersyukur">Berprilaku Bersyukur</string>
+    <string name="berdoa">Berdoa</string>
+    <string name="berprilaku_toleransi">Berprilaku Toleransi</string>
+    <string name="tambah">Tambah</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="penilaian_sikap_sosial">Penilaian Sikap Sosial</string>
+    <string name="disiplin">Disiplin</string>
+    <string name="santun">Santun</string>
+    <string name="percaya_diri">Percaya Diri</string>
+    <string name="jujur">Jujur</string>
+    <string name="peduli">Peduli</string>
+    <string name="tanggung_jawab">Tanggung Jawab</string>
 </resources>
