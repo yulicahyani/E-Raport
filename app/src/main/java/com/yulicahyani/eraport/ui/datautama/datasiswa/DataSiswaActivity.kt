@@ -28,7 +28,7 @@ class DataSiswaActivity : AppCompatActivity() {
         activityDataSiswaBinding = ActivityDataSiswaBinding.inflate(layoutInflater)
         setContentView(activityDataSiswaBinding.root)
 
-        val item = activityDataSiswaBinding.navigation.menu.findItem(R.id.nav_input_nilai)
+        val item = activityDataSiswaBinding.navigation.menu.findItem(R.id.nav_data_utama)
         item.isChecked = true
         navigationListener()
 
@@ -47,6 +47,11 @@ class DataSiswaActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
             }
         })
+
+        activityDataSiswaBinding.btnTambahSiswa.setOnClickListener {
+            val intent = Intent(this@DataSiswaActivity, TambahDataSiswaActivity::class.java)
+            startActivity(intent)
+        }
 
         activityDataSiswaBinding.apply {
             rvSiswa.layoutManager = LinearLayoutManager(this@DataSiswaActivity)
@@ -71,6 +76,29 @@ class DataSiswaActivity : AppCompatActivity() {
                     it.putExtra(DetailDataSiswaActivity.EXTRA_KELAS, data.kelas)
                     it.putExtra(DetailDataSiswaActivity.EXTRA_SEMESTER, data.semester)
                     it.putExtra(DetailDataSiswaActivity.EXTRA_TAHUN_AJARAN, data.tahun_ajaran)
+                    startActivity(it)
+                }
+            }
+
+        })
+
+        adapter.setOnEditClickCallback(object : DataSiswaAdapter.OnEditClickCallback {
+            override fun onEditClicked(data: ResultsSiswa) {
+                Intent(this@DataSiswaActivity, EditDataSiswaActivity::class.java).also {
+                    it.putExtra(EditDataSiswaActivity.EXTRA_ID_SISWA, data.id_siswa)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_NAMA_SISWA, data.nama_siswa)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_ID_SEKOLAH, data.id_sekolah)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_USERNAME, data.username)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_PASSWORD, data.password)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_NIS, data.nis)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_NISN, data.nisn)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_TTL, data.ttl)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_JENIS_KELAMIN, data.jenis_kelamin)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_AGAMA, data.agama)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_ALAMAT, data.alamat)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_KELAS, data.kelas)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_SEMESTER, data.semester)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_TAHUN_AJARAN, data.tahun_ajaran)
                     startActivity(it)
                 }
             }

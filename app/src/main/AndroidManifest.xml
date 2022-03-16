@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ERaport"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.datautama.datasiswa.DetailDataSiswaActivity"></activity>
+        <activity android:name=".ui.raport.ListRaportSemesterActivity"></activity>
+        <activity android:name=".ui.datautama.datauser.TambahDataUserActivity" />
+        <activity android:name=".ui.datautama.datauser.EditDataUserActivity" />
+        <activity android:name=".ui.datautama.datauser.DetailDataUserActivity" />
+        <activity android:name=".ui.datautama.datasiswa.TambahDataSiswaActivity" />
+        <activity android:name=".ui.datautama.datasiswa.EditDataSiswaActivity" />
+        <activity android:name=".ui.datautama.datasiswa.DetailDataSiswaActivity" />
         <activity android:name=".ui.datautama.datamapel.DataMapelActivity" />
         <activity android:name=".ui.datautama.datauser.DataUserActivity" />
         <activity android:name=".ui.datautama.datasiswa.DataSiswaActivity" />
