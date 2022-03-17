@@ -19,7 +19,7 @@
     <string name="nilai_keterampialan">Nilai Keterampialan</string>
     <string name="nilai_sosial">Nilai Sosial</string>
     <string name="nilai_spiritual">Nilai Spiritual</string>
-    <string name="penilaian_sikap_spritual">Penilaian Sikap Spritual</string>
+    <string name="penilaian_sikap_spritual">Penilaian Sikap Spiritual</string>
     <string name="nama_siswa">Nama Siswa</string>
     <string name="deskripsi">Deskripsi</string>
     <string name="penilaian">Penilaian</string>
@@ -41,4 +41,5 @@
     <string name="jujur">Jujur</string>
     <string name="peduli">Peduli</string>
     <string name="tanggung_jawab">Tanggung Jawab</string>
+    <string name="belum_dinilai">Belum dinilai</string>
 </resources>

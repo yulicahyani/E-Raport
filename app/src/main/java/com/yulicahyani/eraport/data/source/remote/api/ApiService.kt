@@ -29,7 +29,7 @@ interface ApiService {
         @Field("firstname") firsname: String,
         @Field("lastname") lastname: String,
         @Field("role") role: String,
-    ): Call<UpdateResponse>
+    ): Call<GeneralResponse>
 
     //SISWA
     @GET("eraport.php?function=getSiswaSekolah")
@@ -40,4 +40,43 @@ interface ApiService {
     //MAPEL
     @GET("eraport.php?function=getMapel")
     fun getMapel(): Call<MapelResponse>
+
+    //NILAI
+    @GET("eraport.php?function=getSikapSpritualSiswa")
+    fun getSikapSpiritualSiswa(
+        @Query("id_user") id_user: Int
+    ): Call<ListNilaiSikapResponse>
+
+    @GET("eraport.php?function=getDetailSikapSpritualSiswa")
+    fun getDetailSikapSpiritualSiswa(
+        @Query("id_siswa") id_siswa: Int
+    ): Call<DetailNilaiSikapResponse>
+
+    @GET("eraport.php?function=getSikapSosialSiswa")
+    fun getSikapSosialSiswa(
+        @Query("id_user") id_user: Int
+    ): Call<ListNilaiSikapResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=createNilaiSpiritual")
+    fun createNilaiSpiritual(
+        @Field("id_siswa") id_siswa: Int,
+        @Field("ketaatan_beribadah") ketaatan_beribadah: String,
+        @Field("berprilaku_bersyukur") berprilaku_bersyukur: String,
+        @Field("berdoa") berdoa: String,
+        @Field("toleransi") toleransi: String
+    ): Call<GeneralResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=updateNilaiSpiritual")
+    fun updateNilaiSpiritual(
+        @Field("id_siswa") id_siswa: Int,
+        @Field("ketaatan_beribadah") ketaatan_beribadah: String,
+        @Field("berprilaku_bersyukur") berprilaku_bersyukur: String,
+        @Field("berdoa") berdoa: String,
+        @Field("toleransi") toleransi: String
+    ): Call<GeneralResponse>
+
+
+
 }

@@ -10,6 +10,7 @@ import com.yulicahyani.eraport.databinding.ActivityInputNilaiBinding
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 import com.yulicahyani.eraport.ui.inputnilai.listmapel.ListMapelActivity
+import com.yulicahyani.eraport.ui.inputnilai.listnilaisikap.ListNilaiSikapActivity
 import com.yulicahyani.eraport.ui.inputnilai.listsiswa.ListSiswaActivity
 import com.yulicahyani.eraport.ui.raport.RaportActivity
 
@@ -71,10 +72,10 @@ class InputNilaiActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v){
             activityInputNilaiBinding.cdSpiritual ->{
-                intentListUser("Spiritual")
+                intentListNilaiSikap("SikapSpiritual")
             }
             activityInputNilaiBinding.cdSikapsosial -> {
-                intentListUser("Sosial")
+                intentListNilaiSikap("SikapSosial")
             }
             activityInputNilaiBinding.cdPengetahuan -> {
                 intentListMapel("Pengetahuan")
@@ -85,9 +86,9 @@ class InputNilaiActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private  fun intentListUser(nameActivity : String){
-        Intent(this@InputNilaiActivity, ListSiswaActivity::class.java).also {
-            it.putExtra(ListSiswaActivity.EXTRA_FROM_ACTIVITY, nameActivity)
+    private  fun intentListNilaiSikap(nameActivity : String){
+        Intent(this@InputNilaiActivity, ListNilaiSikapActivity::class.java).also {
+            it.putExtra(ListNilaiSikapActivity.EXTRA_FROM_ACTIVITY, nameActivity)
             startActivity(it)
         }
     }

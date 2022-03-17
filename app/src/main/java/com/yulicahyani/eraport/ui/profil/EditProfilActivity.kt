@@ -13,7 +13,7 @@ import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.data.source.remote.api.ApiConfig
 import com.yulicahyani.eraport.data.source.remote.response.ResultsSekolah
 import com.yulicahyani.eraport.data.source.remote.response.SekolahResponse
-import com.yulicahyani.eraport.data.source.remote.response.UpdateResponse
+import com.yulicahyani.eraport.data.source.remote.response.GeneralResponse
 import com.yulicahyani.eraport.databinding.ActivityEditProfilBinding
 import com.yulicahyani.eraport.helper.Constant
 import com.yulicahyani.eraport.helper.PrefHelper
@@ -206,10 +206,10 @@ class EditProfilActivity : AppCompatActivity() {
             lastname = activityEditProfilBinding.lastNameEt.text.toString(),
             role = activityEditProfilBinding.roleEt.text.toString()
         )
-        client.enqueue(object : Callback<UpdateResponse> {
+        client.enqueue(object : Callback<GeneralResponse> {
             override fun onResponse(
-                call: Call<UpdateResponse>,
-                response: Response<UpdateResponse>
+                call: Call<GeneralResponse>,
+                response: Response<GeneralResponse>
             ) {
                 if (response.isSuccessful) {
                     if (response.body()?.status == 1) {
@@ -224,7 +224,7 @@ class EditProfilActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<UpdateResponse>, t: Throwable) {
+            override fun onFailure(call: Call<GeneralResponse>, t: Throwable) {
                 Log.e("", "onFailure: ${t.message.toString()}")
             }
 
