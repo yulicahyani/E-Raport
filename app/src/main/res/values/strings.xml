@@ -42,4 +42,9 @@
     <string name="peduli">Peduli</string>
     <string name="tanggung_jawab">Tanggung Jawab</string>
     <string name="belum_dinilai">Belum dinilai</string>
+    <string name="name_kd">Name KD</string>
+    <string name="_0">0</string>
+    <string name="name_tema">Nama Tema</string>
+    <string name="keterampilan">Keterampilan</string>
+    <string name="nilai">Nilai</string>
 </resources>
