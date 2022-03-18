@@ -41,7 +41,7 @@ interface ApiService {
     @GET("eraport.php?function=getMapel")
     fun getMapel(): Call<MapelResponse>
 
-    //NILAI
+    //NILAI SPIRITUAL
     @GET("eraport.php?function=getSikapSpritualSiswa")
     fun getSikapSpiritualSiswa(
         @Query("id_user") id_user: Int
@@ -51,11 +51,6 @@ interface ApiService {
     fun getDetailSikapSpiritualSiswa(
         @Query("id_siswa") id_siswa: Int
     ): Call<DetailNilaiSikapResponse>
-
-    @GET("eraport.php?function=getSikapSosialSiswa")
-    fun getSikapSosialSiswa(
-        @Query("id_user") id_user: Int
-    ): Call<ListNilaiSikapResponse>
 
     @FormUrlEncoded
     @POST("eraport.php?function=createNilaiSpiritual")
@@ -75,6 +70,41 @@ interface ApiService {
         @Field("berprilaku_bersyukur") berprilaku_bersyukur: String,
         @Field("berdoa") berdoa: String,
         @Field("toleransi") toleransi: String
+    ): Call<GeneralResponse>
+
+    //NILAI SOSIAL
+    @GET("eraport.php?function=getSikapSosialSiswa")
+    fun getSikapSosialSiswa(
+        @Query("id_user") id_user: Int
+    ): Call<ListNilaiSikapResponse>
+
+    @GET("eraport.php?function=getDetailSikapSosialSiswa")
+    fun getDetailSikapSosialSiswa(
+        @Query("id_siswa") id_siswa: Int
+    ): Call<DetailNilaiSikapSosialResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=createNilaiSosial")
+    fun createNilaiSosial(
+        @Field("id_siswa") id_siswa: Int,
+        @Field("jujur") jujur: String,
+        @Field("disiplin") disiplin: String,
+        @Field("tanggung_jawab") tanggung_jawab: String,
+        @Field("santun") santun: String,
+        @Field("peduli") peduli: String,
+        @Field("percaya_diri") percaya_diri: String
+    ): Call<GeneralResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=updateNilaiSosial")
+    fun updateNilaiSosial(
+        @Field("id_siswa") id_siswa: Int,
+        @Field("jujur") jujur: String,
+        @Field("disiplin") disiplin: String,
+        @Field("tanggung_jawab") tanggung_jawab: String,
+        @Field("santun") santun: String,
+        @Field("peduli") peduli: String,
+        @Field("percaya_diri") percaya_diri: String
     ): Call<GeneralResponse>
 
 

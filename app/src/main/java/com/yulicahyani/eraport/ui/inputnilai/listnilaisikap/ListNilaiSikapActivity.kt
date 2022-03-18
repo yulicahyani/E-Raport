@@ -90,6 +90,7 @@ class ListNilaiSikapActivity : AppCompatActivity() {
                         Intent(this@ListNilaiSikapActivity, NilaiSosialActivity::class.java).also {
                             it.putExtra(NilaiSosialActivity.EXTRA_ID_SISWA, data.id_siswa)
                             it.putExtra(NilaiSosialActivity.EXTRA_NAMA_SISWA, data.nama_siswa)
+                            it.putExtra(NilaiSosialActivity.EXTRA_DESCRIPTION, data.deskripsi)
                             startActivity(it)
                         }
                     }
