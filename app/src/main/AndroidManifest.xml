@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ERaport"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.inputnilai.nilaiketerampilan.nilaiketerampilansiswa.NilaiKeterampilanSiswaActivity"></activity>
+        <activity android:name=".ui.raport.DetailRaportActivity"></activity>
+        <activity android:name=".ui.inputnilai.nilaiketerampilan.nilaiketerampilansiswa.NilaiKeterampilanSiswaActivity" />
         <activity android:name=".ui.inputnilai.nilaipengetahuan.nilaipengetahuansiswa.NilaiPengetahuanSiswaActivity" />
         <activity android:name=".ui.inputnilai.nilaipengetahuan.nilaiakhirkd.NilaiAkhirKdActivity" />
         <activity android:name=".ui.inputnilai.listnilaisikap.ListNilaiSikapActivity" />
