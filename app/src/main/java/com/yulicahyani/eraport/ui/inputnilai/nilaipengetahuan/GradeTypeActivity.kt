@@ -11,6 +11,8 @@ import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
 import com.yulicahyani.eraport.ui.inputnilai.listsiswa.ListSiswaActivity
+import com.yulicahyani.eraport.ui.inputnilai.nilaipengetahuan.nilaipengetahuansiswa.NilaiPengetahuanSiswaActivity
+import com.yulicahyani.eraport.ui.inputnilai.nilaisikapsosial.NilaiSosialActivity
 import com.yulicahyani.eraport.ui.raport.RaportActivity
 
 class GradeTypeActivity : AppCompatActivity(), View.OnClickListener {
@@ -21,6 +23,7 @@ class GradeTypeActivity : AppCompatActivity(), View.OnClickListener {
         const val EXTRA_CATEGORY_MAPEL = "extra_category_mapel"
     }
     private lateinit var activityGradeTypeBinding: ActivityGradeTypeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityGradeTypeBinding = ActivityGradeTypeBinding.inflate(layoutInflater)
@@ -85,15 +88,23 @@ class GradeTypeActivity : AppCompatActivity(), View.OnClickListener {
                 intentNilaiPengetahuan(gradeType)
             }
             activityGradeTypeBinding.cdNilaiAkhirKd -> {
-                intentNilaiPengetahuan(gradeType)
+//                intentNilaiPengetahuan(gradeType)
             }
         }
 
     }
 
     private fun intentNilaiPengetahuan(gradeType : GradeTypeEntity){
-        Intent(this@GradeTypeActivity, NilaiPengetahuanActivity::class.java).also {
-            it.putExtra(NilaiPengetahuanActivity.EXTRA_GRADE_TYPE, gradeType)
+        Intent(this@GradeTypeActivity, NilaiPengetahuanSiswaActivity::class.java).also {
+            it.putExtra(NilaiPengetahuanSiswaActivity.EXTRA_ID_SISWA, intent.getStringExtra(EXTRA_ID_SISWA).toString())
+            it.putExtra(NilaiPengetahuanSiswaActivity.EXTRA_ID_MAPEL, intent.getStringExtra(
+                EXTRA_ID_MAPEL).toString())
+            it.putExtra(NilaiPengetahuanSiswaActivity.EXTRA_CATEGORY_MAPEL, intent.getStringExtra(
+                EXTRA_CATEGORY_MAPEL).toString())
+            it.putExtra(NilaiPengetahuanSiswaActivity.EXTRA_NPH, gradeType.is_nph.toString())
+            it.putExtra(NilaiPengetahuanSiswaActivity.EXTRA_NPTS, gradeType.is_npts.toString())
+            it.putExtra(NilaiPengetahuanSiswaActivity.EXTRA_NPAS, gradeType.is_npas.toString())
+
             startActivity(it)
         }
     }

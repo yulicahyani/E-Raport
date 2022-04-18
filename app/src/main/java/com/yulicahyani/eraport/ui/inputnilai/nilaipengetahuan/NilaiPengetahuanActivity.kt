@@ -13,7 +13,10 @@ import com.yulicahyani.eraport.ui.raport.RaportActivity
 class NilaiPengetahuanActivity : AppCompatActivity() {
     private lateinit var activityNilaiPengetahuanBinding: ActivityNilaiPengetahuanBinding
     companion object{
-        const val EXTRA_GRADE_TYPE = "extra_grade_type"
+        const val EXTRA_NAME_TEMA = "extra_name_tema"
+        const val EXTRA_KODE_KD = "extra_kode_kd"
+        const val EXTRA_DESKRIPSI_KD = "extra_deskripsi_kd"
+        const val EXTRA_NILAI = "extra_nilai"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +26,12 @@ class NilaiPengetahuanActivity : AppCompatActivity() {
         val item = activityNilaiPengetahuanBinding.navigation.menu.findItem(R.id.nav_input_nilai)
         item.isChecked = true
         navigationListener()
+
+        activityNilaiPengetahuanBinding.apply {
+            tvNameTema.text = intent.getStringExtra(EXTRA_NAME_TEMA).toString()
+            tvNameKd.text = intent.getStringExtra(EXTRA_KODE_KD).toString()
+            nilaiEt.setText(intent.getStringExtra(EXTRA_NILAI).toString())
+        }
     }
 
     private fun navigationListener() {

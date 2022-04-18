@@ -107,6 +107,18 @@ interface ApiService {
         @Field("percaya_diri") percaya_diri: String
     ): Call<GeneralResponse>
 
+    //NILAI PENGETAHUAN
+    @GET("eraport.php?function=getNilaiPengetahuanSiswa")
+    fun getNilaiPengetahuanSiswa(
+        @Query("id_siswa") id_siswa: Int,
+        @Query("id_mapel") id_mapel: Int,
+        @Query("kategori_mapel") kategori_mapel: String,
+        @Query("is_nph") is_nph: Int,
+        @Query("is_npts") is_npts: Int,
+        @Query("is_npas") is_npas: Int,
+    ): Call<ListNilaiPengetahuanResponse>
+
+
 
 
 }
