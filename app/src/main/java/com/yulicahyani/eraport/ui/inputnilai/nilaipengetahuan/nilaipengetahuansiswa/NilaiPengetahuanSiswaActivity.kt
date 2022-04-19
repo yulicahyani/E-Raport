@@ -14,13 +14,11 @@ import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
 import com.yulicahyani.eraport.ui.inputnilai.nilaipengetahuan.NilaiPengetahuanActivity
-import com.yulicahyani.eraport.ui.inputnilai.nilaisikapspiritual.NilaiSpiritualActivity
 import com.yulicahyani.eraport.ui.raport.RaportActivity
-import kotlin.properties.Delegates
 
 class NilaiPengetahuanSiswaActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         const val EXTRA_ID_SISWA = "extra_id_siswa"
         const val EXTRA_ID_MAPEL = "extra_id_mapel"
         const val EXTRA_CATEGORY_MAPEL = "extra_category_mapel"
@@ -32,22 +30,24 @@ class NilaiPengetahuanSiswaActivity : AppCompatActivity() {
     private lateinit var activityNilaiPengetahuanSiswaBinding: ActivityNilaiPengetahuanSiswaBinding
     private lateinit var adapter: NilaiPengetahuanSiswaAdapter
     private lateinit var viewModel: NilaiPengetahuanSiswaViewModel
-    private lateinit var idSiswa : String
-    private lateinit var idMapel : String
-    private lateinit var categoryMapel : String
-    private lateinit var isNph : String
-    private lateinit var isNpts : String
-    private lateinit var isNpas : String
+    private lateinit var idSiswa: String
+    private lateinit var idMapel: String
+    private lateinit var categoryMapel: String
+    private lateinit var isNph: String
+    private lateinit var isNpts: String
+    private lateinit var isNpas: String
 
     lateinit var prefHelper: PrefHelper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        activityNilaiPengetahuanSiswaBinding = ActivityNilaiPengetahuanSiswaBinding.inflate(layoutInflater)
+        activityNilaiPengetahuanSiswaBinding =
+            ActivityNilaiPengetahuanSiswaBinding.inflate(layoutInflater)
         setContentView(activityNilaiPengetahuanSiswaBinding.root)
 
-        val item = activityNilaiPengetahuanSiswaBinding.navigation.menu.findItem(R.id.nav_input_nilai)
+        val item =
+            activityNilaiPengetahuanSiswaBinding.navigation.menu.findItem(R.id.nav_input_nilai)
         item.isChecked = true
         navigationListener()
 
@@ -61,10 +61,18 @@ class NilaiPengetahuanSiswaActivity : AppCompatActivity() {
         isNpas = intent.getStringExtra(EXTRA_NPAS).toString()
 
 
-
         showProgressBar(true)
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(NilaiPengetahuanSiswaViewModel::class.java)
-        viewModel.findNilaiPengetahuanSiswa(idSiswa.toInt(), idMapel.toInt(), categoryMapel, isNph.toInt(), isNpts.toInt(), isNpas.toInt())
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+            NilaiPengetahuanSiswaViewModel::class.java
+        )
+        viewModel.findNilaiPengetahuanSiswa(
+            idSiswa.toInt(),
+            idMapel.toInt(),
+            categoryMapel,
+            isNph.toInt(),
+            isNpts.toInt(),
+            isNpas.toInt()
+        )
 
         adapter = NilaiPengetahuanSiswaAdapter()
         viewModel.getNilaiPengetahuanSiswa().observe(this) {
@@ -76,18 +84,30 @@ class NilaiPengetahuanSiswaActivity : AppCompatActivity() {
         }
 
         activityNilaiPengetahuanSiswaBinding.apply {
-            rvNilaiPengetahuan.layoutManager = LinearLayoutManager(this@NilaiPengetahuanSiswaActivity)
+            rvNilaiPengetahuan.layoutManager =
+                LinearLayoutManager(this@NilaiPengetahuanSiswaActivity)
             rvNilaiPengetahuan.setHasFixedSize(true)
             rvNilaiPengetahuan.adapter = adapter
         }
 
         adapter.setOnClickCallback(object : NilaiPengetahuanSiswaAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ResultsListNilaiPengetahuan) {
-                Intent(this@NilaiPengetahuanSiswaActivity, NilaiPengetahuanActivity::class.java).also {
+                Intent(
+                    this@NilaiPengetahuanSiswaActivity,
+                    NilaiPengetahuanActivity::class.java
+                ).also {
                     it.putExtra(NilaiPengetahuanActivity.EXTRA_NAME_TEMA, data.nama_tema)
                     it.putExtra(NilaiPengetahuanActivity.EXTRA_KODE_KD, data.kode_kd)
                     it.putExtra(NilaiPengetahuanActivity.EXTRA_NILAI, data.nilai_kd)
                     it.putExtra(NilaiPengetahuanActivity.EXTRA_DESKRIPSI_KD, data.deskripsi_kd)
+                    it.putExtra(NilaiPengetahuanActivity.EXTRA_ID_SISWA, data.id_siswa)
+                    it.putExtra(NilaiPengetahuanActivity.EXTRA_NAME_SISWA, data.nama_siswa)
+                    it.putExtra(NilaiPengetahuanActivity.EXTRA_ID_MAPEL, data.id_mapel)
+                    it.putExtra(NilaiPengetahuanActivity.EXTRA_ID_TEMA, data.id_tema)
+                    it.putExtra(NilaiPengetahuanActivity.EXTRA_ID_KD, data.id_kd)
+                    it.putExtra(NilaiPengetahuanActivity.EXTRA_NPH, data.is_nph)
+                    it.putExtra(NilaiPengetahuanActivity.EXTRA_NPTS, data.is_npts)
+                    it.putExtra(NilaiPengetahuanActivity.EXTRA_NPAS, data.is_npas)
                     startActivity(it)
                 }
 
@@ -101,25 +121,29 @@ class NilaiPengetahuanSiswaActivity : AppCompatActivity() {
         activityNilaiPengetahuanSiswaBinding.navigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_dashboard -> {
-                    val intent = Intent(this@NilaiPengetahuanSiswaActivity, DashboardActivity::class.java)
+                    val intent =
+                        Intent(this@NilaiPengetahuanSiswaActivity, DashboardActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                     return@setOnItemSelectedListener true
                 }
                 R.id.nav_data_utama -> {
-                    val intent = Intent(this@NilaiPengetahuanSiswaActivity, DataUtamaActivity::class.java)
+                    val intent =
+                        Intent(this@NilaiPengetahuanSiswaActivity, DataUtamaActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                     return@setOnItemSelectedListener true
                 }
                 R.id.nav_input_nilai -> {
-                    val intent = Intent(this@NilaiPengetahuanSiswaActivity, InputNilaiActivity::class.java)
+                    val intent =
+                        Intent(this@NilaiPengetahuanSiswaActivity, InputNilaiActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                     return@setOnItemSelectedListener true
                 }
                 R.id.nav_raport -> {
-                    val intent = Intent(this@NilaiPengetahuanSiswaActivity, RaportActivity::class.java)
+                    val intent =
+                        Intent(this@NilaiPengetahuanSiswaActivity, RaportActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                     return@setOnItemSelectedListener true

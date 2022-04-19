@@ -61,7 +61,7 @@ class NilaiSosialActivity : AppCompatActivity(), View.OnClickListener {
             NilaiSosialViewModel::class.java
         )
 
-        if (intent.getStringExtra(NilaiSpiritualActivity.EXTRA_DESCRIPTION).isNullOrEmpty()) {
+        if (intent.getStringExtra(EXTRA_DESCRIPTION).isNullOrEmpty()) {
             showProgressBar(false)
             activityNilaiSosialBinding.btnUpdate.visibility = View.INVISIBLE
             activityNilaiSosialBinding.btnTambah.visibility = View.VISIBLE
@@ -298,7 +298,7 @@ class NilaiSosialActivity : AppCompatActivity(), View.OnClickListener {
         if (jujur.isEmpty() || disiplin.isEmpty() || tanggung_jawab.isEmpty() || santun.isEmpty() || peduli.isEmpty() || percaya_diri.isEmpty()) {
             Toast.makeText(this, "Input Data Tidak Lengkap", Toast.LENGTH_SHORT).show()
         } else {
-            val id_siswa = intent.getStringExtra(NilaiSpiritualActivity.EXTRA_ID_SISWA)
+            val id_siswa = intent.getStringExtra(EXTRA_ID_SISWA)
             if (id_siswa != null) {
                 showProgressBar(true)
                 viewModel.addNilaiSosial(

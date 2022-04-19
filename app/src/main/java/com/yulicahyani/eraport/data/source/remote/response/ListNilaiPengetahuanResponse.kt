@@ -32,6 +32,9 @@ data class ResultsListNilaiPengetahuan(
     @field:SerializedName("id_siswa")
     val id_siswa: String,
 
+    @field:SerializedName("nama_siswa")
+    val nama_siswa: String,
+
     @field:SerializedName("id_mapel")
     val id_mapel: String,
 

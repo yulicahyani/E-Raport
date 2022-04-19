@@ -118,7 +118,30 @@ interface ApiService {
         @Query("is_npas") is_npas: Int,
     ): Call<ListNilaiPengetahuanResponse>
 
+    @FormUrlEncoded
+    @POST("eraport.php?function=createNilaiPengetahuan")
+    fun createNilaiPengetahuan(
+        @Field("id_siswa") id_siswa: Int,
+        @Field("id_mapel") id_mapel: Int,
+        @Field("id_tema") id_tema: Int,
+        @Field("id_kd") id_kd: Int,
+        @Field("is_nph") is_nph: Int,
+        @Field("is_npts") is_npts: Int,
+        @Field("is_npas") is_npas: Int,
+        @Field("nilai_kd") nilai_kd: Int,
+    ): Call<GeneralResponse>
 
-
+    @FormUrlEncoded
+    @POST("eraport.php?function=updateNilaiPengetahuan")
+    fun updateNilaiPengetahuan(
+        @Field("id_siswa") id_siswa: Int,
+        @Field("id_mapel") id_mapel: Int,
+        @Field("id_tema") id_tema: Int,
+        @Field("id_kd") id_kd: Int,
+        @Field("is_nph") is_nph: Int,
+        @Field("is_npts") is_npts: Int,
+        @Field("is_npas") is_npas: Int,
+        @Field("nilai_kd") nilai_kd: Int,
+    ): Call<GeneralResponse>
 
 }

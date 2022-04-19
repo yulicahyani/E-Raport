@@ -5,9 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yulicahyani.eraport.data.source.remote.response.ResultsListNilaiPengetahuan
 import com.yulicahyani.eraport.databinding.ItemPengetahuanSiswaBinding
+import java.lang.StringBuilder
 
 
-class NilaiPengetahuanSiswaAdapter: RecyclerView.Adapter<NilaiPengetahuanSiswaAdapter.PengetahuanSiswaViewHolder>() {
+class NilaiPengetahuanSiswaAdapter :
+    RecyclerView.Adapter<NilaiPengetahuanSiswaAdapter.PengetahuanSiswaViewHolder>() {
 
     private val listData = ArrayList<ResultsListNilaiPengetahuan>()
     private lateinit var onItemClickCallback: NilaiPengetahuanSiswaAdapter.OnItemClickCallback
@@ -23,7 +25,8 @@ class NilaiPengetahuanSiswaAdapter: RecyclerView.Adapter<NilaiPengetahuanSiswaAd
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PengetahuanSiswaViewHolder {
-        val view = ItemPengetahuanSiswaBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val view =
+            ItemPengetahuanSiswaBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PengetahuanSiswaViewHolder((view))
     }
 
@@ -34,15 +37,21 @@ class NilaiPengetahuanSiswaAdapter: RecyclerView.Adapter<NilaiPengetahuanSiswaAd
     override fun getItemCount(): Int = listData.size
 
 
-    inner class PengetahuanSiswaViewHolder (private val binding: ItemPengetahuanSiswaBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class PengetahuanSiswaViewHolder(private val binding: ItemPengetahuanSiswaBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(nilai: ResultsListNilaiPengetahuan) {
             binding.root.setOnClickListener {
                 onItemClickCallback.onItemClicked(nilai)
             }
-
+            val kodeKd = StringBuilder()
             binding.apply {
-                tvNameTema.text = nilai.nama_tema
-                tvNameKd.text = nilai.kode_kd
+                if (nilai.nama_tema == "") {
+                    tvNameTema.text = "-"
+                } else {
+                    tvNameTema.text = nilai.nama_tema
+                }
+
+                tvNameKd.text = kodeKd.append("KD ").append(nilai.kode_kd)
                 tvNilai.text = nilai.nilai_kd
             }
         }

@@ -47,4 +47,5 @@
     <string name="name_tema">Nama Tema</string>
     <string name="keterampilan">Keterampilan</string>
     <string name="nilai">Nilai</string>
+    <string name="deskripsi_kd">Deskripsi Kd</string>
 </resources>
