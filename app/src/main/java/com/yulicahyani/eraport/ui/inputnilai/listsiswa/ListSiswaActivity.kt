@@ -15,6 +15,7 @@ import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 import com.yulicahyani.eraport.ui.inputnilai.*
 import com.yulicahyani.eraport.ui.inputnilai.nilaiketerampilan.NilaiKeterampilanActivity
+import com.yulicahyani.eraport.ui.inputnilai.nilaiketerampilan.nilaiketerampilansiswa.NilaiKeterampilanSiswaActivity
 import com.yulicahyani.eraport.ui.inputnilai.nilaipengetahuan.GradeTypeActivity
 import com.yulicahyani.eraport.ui.inputnilai.nilaisikapsosial.NilaiSosialActivity
 import com.yulicahyani.eraport.ui.inputnilai.nilaisikapspiritual.NilaiSpiritualActivity
@@ -101,10 +102,10 @@ class ListSiswaActivity : AppCompatActivity() {
                     }
 
                     "Keterampilan" -> {
-                        Intent(this@ListSiswaActivity, NilaiKeterampilanActivity::class.java).also {
-                            it.putExtra(NilaiKeterampilanActivity.EXTRA_ID_SISWA, data.id_siswa)
+                        Intent(this@ListSiswaActivity, NilaiKeterampilanSiswaActivity::class.java).also {
+                            it.putExtra(NilaiKeterampilanSiswaActivity.EXTRA_ID_SISWA, data.id_siswa)
                             it.putExtra(
-                                NilaiKeterampilanActivity.EXTRA_ID_MAPEL, intent.getStringExtra(
+                                NilaiKeterampilanSiswaActivity.EXTRA_ID_MAPEL, intent.getStringExtra(
                                     EXTRA_ID_MAPEL
                                 ))
                             startActivity(it)

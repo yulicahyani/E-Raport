@@ -144,4 +144,31 @@ interface ApiService {
         @Field("nilai_kd") nilai_kd: Int,
     ): Call<GeneralResponse>
 
+    //NILAI KETERAMPILAN
+    @GET("eraport.php?function=getNilaiKeterampilanSiswa")
+    fun getNilaiKeterampilanSiswa(
+        @Query("id_siswa") id_siswa: Int,
+        @Query("id_mapel") id_mapel: Int,
+    ): Call<ListNilaiKeterampilanResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=createNilaiKeterampilan")
+    fun createNilaiKeterampilan(
+        @Field("id_siswa") id_siswa: Int,
+        @Field("id_mapel") id_mapel: Int,
+        @Field("id_kd") id_kd: Int,
+        @Field("id_kt") id_kt: Int,
+        @Field("nilai_kt") nilai_kt: Int
+    ): Call<GeneralResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=updateNilaiKeterampilan")
+    fun updateNilaiKeterampilan(
+        @Field("id_siswa") id_siswa: Int,
+        @Field("id_mapel") id_mapel: Int,
+        @Field("id_kd") id_kd: Int,
+        @Field("id_kt") id_kt: Int,
+        @Field("nilai_kt") nilai_kt: Int
+    ): Call<GeneralResponse>
+
 }
