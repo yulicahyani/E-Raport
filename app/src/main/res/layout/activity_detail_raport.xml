@@ -238,12 +238,13 @@
                             app:cardElevation="4dp"
                             android:paddingHorizontal="4dp"
                             app:cardUseCompatPadding="true">
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:padding="4dp"
-                                android:text="Sikap Spritual"
+                                android:text="Sikap Spiritual"
                                 android:textSize="12sp"
                                 android:textStyle="bold"/>
 
@@ -260,7 +261,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="start"
-                                android:id="@+id/spritual"
+                                android:id="@+id/spiritual"
                                 android:paddingHorizontal="4dp"
                                 android:text="Yuli baik dalam beribadah. blablabla blabala balabala balabalabnb balabab abalabalb abalabajdhkl najkhdslka "
                                 android:textSize="12sp"

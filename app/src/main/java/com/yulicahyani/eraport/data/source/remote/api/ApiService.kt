@@ -72,6 +72,11 @@ interface ApiService {
         @Field("toleransi") toleransi: String
     ): Call<GeneralResponse>
 
+    @GET("eraport.php?function=getNilaiAkhirSikapSpiritual")
+    fun getNilaiAkhirSikapSpritual(
+        @Query("id_siswa") id_siswa: Int
+    ): Call<NilaiFinalSikapSpiritualResponse>
+
     //NILAI SOSIAL
     @GET("eraport.php?function=getSikapSosialSiswa")
     fun getSikapSosialSiswa(
@@ -106,6 +111,11 @@ interface ApiService {
         @Field("peduli") peduli: String,
         @Field("percaya_diri") percaya_diri: String
     ): Call<GeneralResponse>
+
+    @GET("eraport.php?function=getNilaiAkhirSikapSosial")
+    fun getNilaiAkhirSikapSosial(
+        @Query("id_siswa") id_siswa: Int
+    ): Call<NilaiFinalSikapSosialResponse>
 
     //NILAI PENGETAHUAN
     @GET("eraport.php?function=getNilaiPengetahuanSiswa")
@@ -144,6 +154,11 @@ interface ApiService {
         @Field("nilai_kd") nilai_kd: Int,
     ): Call<GeneralResponse>
 
+    @GET("eraport.php?function=getNilaiFinalPengetahuan")
+    fun getNilaiFinalPengetahuan(
+        @Query("id_siswa") id_siswa: Int
+    ): Call<NilaiFinalPengetahuanResponse>
+
     //NILAI KETERAMPILAN
     @GET("eraport.php?function=getNilaiKeterampilanSiswa")
     fun getNilaiKeterampilanSiswa(
@@ -170,5 +185,10 @@ interface ApiService {
         @Field("id_kt") id_kt: Int,
         @Field("nilai_kt") nilai_kt: Int
     ): Call<GeneralResponse>
+
+    @GET("eraport.php?function=getNilaiFinalKeterampilan")
+    fun getNilaiFinalKeterampilan(
+        @Query("id_siswa") id_siswa: Int
+    ): Call<NilaiFinalKeterampilanResponse>
 
 }

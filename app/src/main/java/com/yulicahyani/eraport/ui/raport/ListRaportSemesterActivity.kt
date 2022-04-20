@@ -71,6 +71,8 @@ class ListRaportSemesterActivity : AppCompatActivity() {
         )
         val ttl = intent.getStringExtra(EXTRA_TTL)
         val namaSekolah = prefHelper.getString(Constant.PREF_SEKOLAH)
+        val semester1 = '1'
+        val semester2 = '2'
 
         listRaportSemesterBinding.lihatRaport1.setOnClickListener {
             Intent(this@ListRaportSemesterActivity, DetailRaportActivity::class.java).also {
@@ -85,7 +87,7 @@ class ListRaportSemesterActivity : AppCompatActivity() {
                 it.putExtra(DetailRaportActivity.EXTRA_AGAMA, agama)
                 it.putExtra(DetailRaportActivity.EXTRA_ALAMAT, alamatSiswa)
                 it.putExtra(DetailRaportActivity.EXTRA_KELAS, kelas)
-                it.putExtra(DetailRaportActivity.EXTRA_SEMESTER, '1')
+                it.putExtra(DetailRaportActivity.EXTRA_SEMESTER, semester1.toString())
                 it.putExtra(DetailRaportActivity.EXTRA_TAHUN_AJARAN, tahunPelajaran)
                 startActivity(it)
             }
@@ -104,7 +106,7 @@ class ListRaportSemesterActivity : AppCompatActivity() {
                 it.putExtra(DetailRaportActivity.EXTRA_AGAMA, agama)
                 it.putExtra(DetailRaportActivity.EXTRA_ALAMAT, alamatSiswa)
                 it.putExtra(DetailRaportActivity.EXTRA_KELAS, kelas)
-                it.putExtra(DetailRaportActivity.EXTRA_SEMESTER, '2')
+                it.putExtra(DetailRaportActivity.EXTRA_SEMESTER, semester2.toString())
                 it.putExtra(DetailRaportActivity.EXTRA_TAHUN_AJARAN, tahunPelajaran)
                 startActivity(it)
             }

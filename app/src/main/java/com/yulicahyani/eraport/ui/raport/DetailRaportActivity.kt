@@ -4,14 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityDetailRaportBinding
-import com.yulicahyani.eraport.databinding.ActivityListRaportSemesterBinding
 import com.yulicahyani.eraport.helper.Constant
 import com.yulicahyani.eraport.helper.PrefHelper
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
-import com.yulicahyani.eraport.ui.datautama.datasiswa.DetailDataSiswaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
 
 class DetailRaportActivity : AppCompatActivity() {
@@ -34,6 +34,9 @@ class DetailRaportActivity : AppCompatActivity() {
 
     private  lateinit var detailRaportBinding: ActivityDetailRaportBinding
     lateinit var prefHelper : PrefHelper
+    private lateinit var viewModel: NilaiFinalViewModel
+    private lateinit var adapterPengetahuan: NilaiFinalPengetahuanAdapter
+    private lateinit var adapterKeterampilan: NilaiFinalKeterampilanAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +73,80 @@ class DetailRaportActivity : AppCompatActivity() {
         detailRaportBinding.semester.text = semester
         detailRaportBinding.kelas.text = kelas
         detailRaportBinding.tapel.text = tahunPelajaran
+
+        viewModel= ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+            NilaiFinalViewModel::class.java
+        )
+
+        if (id_siswa != null) {
+            viewModel.findNilaiFinalSpiritual(id_siswa.toInt())
+        }
+        viewModel.getNilaiAkhirSikapSpiritual().observe(this, {
+            if (it != null && it.size != 0 && it[0].semester == semester) {
+                detailRaportBinding.apply {
+                    spiritual.text = it[0].deskripsi
+                }
+            }
+            else{
+                detailRaportBinding.apply {
+                    spiritual.text = ' '.toString()
+                }
+            }
+        })
+
+        if (id_siswa != null) {
+            viewModel.findNilaiFinalSosial(id_siswa.toInt())
+        }
+        viewModel.getNilaiAkhirSikapSosial().observe(this, {
+            if (it != null && it.size != 0 && it[0].semester == semester) {
+                detailRaportBinding.apply {
+                    sosial.text = it[0].deskripsi
+                }
+            }
+            else{
+                detailRaportBinding.apply {
+                    sosial.text = ' '.toString()
+                }
+            }
+        })
+
+        adapterPengetahuan = NilaiFinalPengetahuanAdapter()
+
+        if (id_siswa != null) {
+            viewModel.findNilaiFinalPengetahuan(id_siswa.toInt())
+        }
+        viewModel.getNilaiAkhirPengetahuan().observe(this) {
+            if (it != null && it.size != 0 && it[0].semester == semester) {
+                adapterPengetahuan.setData(it)
+                adapterPengetahuan.notifyDataSetChanged()
+            }
+        }
+
+        detailRaportBinding.apply {
+            rvPengetahuan.layoutManager =
+                LinearLayoutManager(this@DetailRaportActivity)
+            rvPengetahuan.setHasFixedSize(true)
+            rvPengetahuan.adapter = adapterPengetahuan
+        }
+
+        adapterKeterampilan = NilaiFinalKeterampilanAdapter()
+
+        if (id_siswa != null) {
+            viewModel.findNilaiFinalKeterampilan(id_siswa.toInt())
+        }
+        viewModel.getNilaiAkhirKeterampilan().observe(this) {
+            if (it != null && it.size != 0 && it[0].semester == semester) {
+                adapterKeterampilan.setData(it)
+                adapterKeterampilan.notifyDataSetChanged()
+            }
+        }
+
+        detailRaportBinding.apply {
+            rvKeterampilan.layoutManager =
+                LinearLayoutManager(this@DetailRaportActivity)
+            rvKeterampilan.setHasFixedSize(true)
+            rvKeterampilan.adapter = adapterKeterampilan
+        }
 
     }
 
