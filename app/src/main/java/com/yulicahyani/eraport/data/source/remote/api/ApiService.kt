@@ -13,10 +13,6 @@ interface ApiService {
         @Field("password") password: String
     ): Call<LoginResponse>
 
-    //USER
-    @GET("eraport.php?function=getAllUser")
-    fun getAllUser(): Call<UserResponse>
-
     //SEKOLAH
     @GET("eraport.php?function=getAllSekolah")
     fun getAllSekolah(): Call<SekolahResponse>
@@ -34,6 +30,28 @@ interface ApiService {
         @Field("lastname") lastname: String,
         @Field("role") role: String,
     ): Call<GeneralResponse>
+
+    @GET("eraport.php?function=getAllUser")
+    fun getAllUser(): Call<UserResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=createUser")
+    fun createUser(
+        @Field("id_sekolah") id_sekolah: Int,
+        @Field("email") email: String,
+        @Field("username") username: String,
+        @Field("password") password: String,
+        @Field("firstname") firsname: String,
+        @Field("lastname") lastname: String,
+        @Field("role") role: String,
+    ): Call<GeneralResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=deleteUser")
+    fun deleteUser(
+        @Field("id_user") id_user: Int
+    ): Call<GeneralResponse>
+
 
     //SISWA
     @GET("eraport.php?function=getSiswaSekolah")

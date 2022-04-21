@@ -11,11 +11,13 @@ import com.yulicahyani.eraport.data.source.remote.response.SekolahResponse
 import com.yulicahyani.eraport.databinding.ActivityDataSiswaBinding
 import com.yulicahyani.eraport.databinding.ActivityDetailDataSiswaBinding
 import com.yulicahyani.eraport.databinding.ActivityDetailDataUserBinding
+import com.yulicahyani.eraport.helper.Constant
 import com.yulicahyani.eraport.helper.PrefHelper
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 import com.yulicahyani.eraport.ui.datautama.datasiswa.DataSiswaAdapter
 import com.yulicahyani.eraport.ui.datautama.datasiswa.DataSiswaViewModel
+import com.yulicahyani.eraport.ui.datautama.datasiswa.DetailDataSiswaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
 import com.yulicahyani.eraport.ui.raport.RaportActivity
 import retrofit2.Call
@@ -25,10 +27,23 @@ import kotlin.properties.Delegates
 
 class DetailDataUserActivity : AppCompatActivity() {
 
+    companion object{
+        const val EXTRA_ID_USER = "extra_id_user"
+        const val EXTRA_EMAIL = "extra_email"
+        const val EXTRA_ID_SEKOLAH = "extra_id_sekolah"
+        const val EXTRA_USERNAME = "extra_username"
+        const val EXTRA_PASSWORD = "extra_password"
+        const val EXTRA_FIRSTNAME = "extra_firstname"
+        const val EXTRA_LASTNAME = "extra_lastname"
+        const val EXTRA_ROLE = "extra_role"
+    }
+
     private lateinit var activityDetailDataUserBinding: ActivityDetailDataUserBinding
     lateinit var prefHelper : PrefHelper
     var listSekolah = mutableListOf<ResultsSekolah>()
-    private var idSekolah by Delegates.notNull<Int>()
+    var idSekolah by Delegates.notNull<Int>()
+    lateinit var nama_sekolah: String
+    lateinit var alamat_sekolah: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +57,21 @@ class DetailDataUserActivity : AppCompatActivity() {
         prefHelper = PrefHelper(this)
 
         getAllSekolah()
+
+        idSekolah = intent.getStringExtra(EXTRA_ID_SEKOLAH).toString().toInt()
+
+        val nama = StringBuilder()
+        activityDetailDataUserBinding.email.text = intent.getStringExtra(EXTRA_EMAIL)
+        activityDetailDataUserBinding.username.text = intent.getStringExtra(
+            EXTRA_USERNAME
+        )
+        activityDetailDataUserBinding.password.text = intent.getStringExtra(
+            EXTRA_PASSWORD
+        )
+        activityDetailDataUserBinding.nama.text = nama.append(intent.getStringExtra(
+            EXTRA_FIRSTNAME
+        )).append(" ").append(intent.getStringExtra(EXTRA_LASTNAME))
+
     }
 
     private fun getAllSekolah() {
@@ -57,6 +87,10 @@ class DetailDataUserActivity : AppCompatActivity() {
                     }
                     Log.e("listSekolah", listSekolah.size.toString())
                     Log.e("DetailDataUserActivity", response.body()!!.message)
+                    nama_sekolah = listSekolah.find { it.id_sekolah.toInt() == idSekolah }?.nama_sekolah.toString()
+                    alamat_sekolah = listSekolah.find { it.id_sekolah.toInt() == idSekolah }?.alamat.toString()
+                    activityDetailDataUserBinding.namaSekolah.text = nama_sekolah
+                    activityDetailDataUserBinding.alamatSekolah.text = alamat_sekolah
 
                 } else {
                     Log.e("", "onFailure: ${response.message()}")

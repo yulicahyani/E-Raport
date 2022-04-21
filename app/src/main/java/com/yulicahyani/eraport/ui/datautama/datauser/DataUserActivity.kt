@@ -7,14 +7,14 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yulicahyani.eraport.R
+import com.yulicahyani.eraport.data.source.remote.response.ResultsAllUser
+import com.yulicahyani.eraport.data.source.remote.response.ResultsSiswa
 import com.yulicahyani.eraport.databinding.ActivityDataSiswaBinding
 import com.yulicahyani.eraport.databinding.ActivityDataUserBinding
 import com.yulicahyani.eraport.helper.Constant
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
-import com.yulicahyani.eraport.ui.datautama.datasiswa.DataSiswaAdapter
-import com.yulicahyani.eraport.ui.datautama.datasiswa.DataSiswaViewModel
-import com.yulicahyani.eraport.ui.datautama.datasiswa.TambahDataSiswaActivity
+import com.yulicahyani.eraport.ui.datautama.datasiswa.*
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
 import com.yulicahyani.eraport.ui.inputnilai.listmapel.ListMapelAdapter
 import com.yulicahyani.eraport.ui.inputnilai.listmapel.ListMapelViewModel
@@ -54,12 +54,46 @@ class DataUserActivity : AppCompatActivity() {
             }
         })
 
-
         activityDataUserBinding.apply {
             rvUser.layoutManager = LinearLayoutManager(this@DataUserActivity)
             rvUser.setHasFixedSize(true)
             rvUser.adapter = adapter
         }
+
+
+        adapter.setOnClickCallback(object : DataUserAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: ResultsAllUser) {
+                Intent(this@DataUserActivity, DetailDataUserActivity::class.java).also {
+                    it.putExtra(DetailDataUserActivity.EXTRA_ID_USER, data.id_user)
+                    it.putExtra(DetailDataUserActivity.EXTRA_EMAIL, data.email)
+                    it.putExtra(DetailDataUserActivity.EXTRA_ID_SEKOLAH, data.id_sekolah)
+                    it.putExtra(DetailDataUserActivity.EXTRA_USERNAME, data.username)
+                    it.putExtra(DetailDataUserActivity.EXTRA_PASSWORD, data.password)
+                    it.putExtra(DetailDataUserActivity.EXTRA_FIRSTNAME, data.firstname)
+                    it.putExtra(DetailDataUserActivity.EXTRA_LASTNAME, data.lastname)
+                    it.putExtra(DetailDataUserActivity.EXTRA_ROLE, data.role)
+                    startActivity(it)
+                }
+            }
+
+        })
+
+        adapter.setOnEditClickCallback(object : DataUserAdapter.OnEditClickCallback {
+            override fun onEditClicked(data: ResultsAllUser) {
+                Intent(this@DataUserActivity, EditDataUserActivity::class.java).also {
+                    it.putExtra(EditDataUserActivity.EXTRA_ID_USER, data.id_user)
+                    it.putExtra(EditDataUserActivity.EXTRA_EMAIL, data.email)
+                    it.putExtra(EditDataUserActivity.EXTRA_ID_SEKOLAH, data.id_sekolah)
+                    it.putExtra(EditDataUserActivity.EXTRA_USERNAME, data.username)
+                    it.putExtra(EditDataUserActivity.EXTRA_PASSWORD, data.password)
+                    it.putExtra(EditDataUserActivity.EXTRA_FIRSTNAME, data.firstname)
+                    it.putExtra(EditDataUserActivity.EXTRA_LASTNAME, data.lastname)
+                    it.putExtra(EditDataUserActivity.EXTRA_ROLE, data.role)
+                    startActivity(it)
+                }
+            }
+
+        })
     }
 
     private fun showProgressBar(state: Boolean) {

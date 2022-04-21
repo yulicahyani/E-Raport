@@ -87,9 +87,9 @@ class GradeTypeActivity : AppCompatActivity(), View.OnClickListener {
                 gradeType.is_npas = 1
                 intentNilaiPengetahuan(gradeType)
             }
-            activityGradeTypeBinding.cdNilaiAkhirKd -> {
-//                intentNilaiPengetahuan(gradeType)
-            }
+//            activityGradeTypeBinding.cdNilaiAkhirKd -> {
+////                intentNilaiPengetahuan(gradeType)
+//            }
         }
 
     }

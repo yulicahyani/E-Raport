@@ -3,11 +3,13 @@ package com.yulicahyani.eraport.ui.datautama.datauser
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.data.source.remote.api.ApiConfig
 import com.yulicahyani.eraport.data.source.remote.response.ResultsSekolah
@@ -18,6 +20,8 @@ import com.yulicahyani.eraport.helper.Constant
 import com.yulicahyani.eraport.helper.PrefHelper
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
+import com.yulicahyani.eraport.ui.datautama.datasiswa.DataSiswaViewModel
+import com.yulicahyani.eraport.ui.datautama.datasiswa.EditDataSiswaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
 import com.yulicahyani.eraport.ui.raport.RaportActivity
 import retrofit2.Call
@@ -28,9 +32,20 @@ import kotlin.properties.Delegates
 
 class EditDataUserActivity : AppCompatActivity() {
 
+    companion object{
+        const val EXTRA_ID_USER = "extra_id_user"
+        const val EXTRA_EMAIL = "extra_email"
+        const val EXTRA_ID_SEKOLAH = "extra_id_sekolah"
+        const val EXTRA_USERNAME = "extra_username"
+        const val EXTRA_PASSWORD = "extra_password"
+        const val EXTRA_FIRSTNAME = "extra_firstname"
+        const val EXTRA_LASTNAME = "extra_lastname"
+        const val EXTRA_ROLE = "extra_role"
+    }
     private lateinit var activityEditDataUserBinding: ActivityEditDataUserBinding
+    private lateinit var viewModel: DataUserViewModel
     private lateinit var idNamaSekolah: String
-    private var idSekolah by Delegates.notNull<Int>()
+    var idSekolah by Delegates.notNull<Int>()
     lateinit var prefHelper: PrefHelper
     var listSekolah = mutableListOf<ResultsSekolah>()
 
@@ -46,11 +61,89 @@ class EditDataUserActivity : AppCompatActivity() {
         prefHelper = PrefHelper(this)
         getAllSekolah()
 
+        idSekolah = intent.getStringExtra(EXTRA_ID_SEKOLAH).toString().toInt()
+        activityEditDataUserBinding.emailEt.setText(intent.getStringExtra(EXTRA_EMAIL))
+        activityEditDataUserBinding.usernameEt.setText(intent.getStringExtra(
+            EXTRA_USERNAME
+        ))
+        activityEditDataUserBinding.passwordEt.setText(intent.getStringExtra(
+            EXTRA_PASSWORD
+        ))
+        activityEditDataUserBinding.firstNameEt.setText(intent.getStringExtra(EXTRA_FIRSTNAME))
+        activityEditDataUserBinding.lastNameEt.setText(intent.getStringExtra(EXTRA_LASTNAME))
+        activityEditDataUserBinding.roleEt.setText(intent.getStringExtra(EXTRA_ROLE))
+
         activityEditDataUserBinding.btnBatal.setOnClickListener {
             val intent = Intent(this@EditDataUserActivity, DataUtamaActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
+
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+            DataUserViewModel::class.java
+        )
+        activityEditDataUserBinding.btnSimpan.setOnClickListener {
+            updateDataUser()
+        }
+    }
+
+    fun updateDataUser() {
+        if (TextUtils.isEmpty(activityEditDataUserBinding.usernameEt.text.toString())) {
+            activityEditDataUserBinding.usernameEt.error = "Please enter username"
+            return
+        } else if (TextUtils.isEmpty(activityEditDataUserBinding.passwordEt.text.toString())) {
+            activityEditDataUserBinding.passwordEt.error = "Please enter password"
+            return
+        } else if (TextUtils.isEmpty(activityEditDataUserBinding.emailEt.text.toString())) {
+            activityEditDataUserBinding.emailEt.error = "Please enter email"
+            return
+        } else if (TextUtils.isEmpty(activityEditDataUserBinding.firstNameEt.text.toString())) {
+            activityEditDataUserBinding.firstNameEt.error = "Please enter firstname"
+            return
+        } else if (TextUtils.isEmpty(activityEditDataUserBinding.lastNameEt.text.toString())) {
+            activityEditDataUserBinding.lastNameEt.error = "Please enter lastname"
+            return
+        } else if (TextUtils.isEmpty(activityEditDataUserBinding.roleEt.text.toString())) {
+            activityEditDataUserBinding.roleEt.error = "Please enter role"
+            return
+        }
+
+        val id_user = intent.getStringExtra(EditDataUserActivity.EXTRA_ID_USER).toString().toInt()
+        val id_sekolah = idSekolah
+        val email = activityEditDataUserBinding.emailEt.text.toString()
+        val username = activityEditDataUserBinding.usernameEt.text.toString()
+        val password = activityEditDataUserBinding.passwordEt.text.toString()
+        val firstname = activityEditDataUserBinding.firstNameEt.text.toString()
+        val lastname = activityEditDataUserBinding.lastNameEt.text.toString()
+        val role = activityEditDataUserBinding.roleEt.text.toString()
+
+        if (id_user != null && id_sekolah != null && email != null && username != null && firstname != null && lastname != null && role != null) {
+            viewModel.updateDataUser(
+                id_user,
+                id_sekolah,
+                email,
+                username,
+                password,
+                firstname,
+                lastname,
+                role
+            )
+        }
+
+        viewModel.getResponseUpdate().observe(this, {
+            if (it != null) {
+                if (it.status == 1) {
+                    Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@EditDataUserActivity, DataUtamaActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+
+
     }
 
     private fun setupSpinner() {
@@ -66,9 +159,10 @@ class EditDataUserActivity : AppCompatActivity() {
         spinner.adapter = arrayAdapter
 
         idNamaSekolah =
-            StringBuilder().append(prefHelper.getInt(Constant.PREF_ID_SEKOLAH).toString())
-                .append("-").append(prefHelper.getString(Constant.PREF_SEKOLAH)).toString()
-        idSekolah = prefHelper.getInt(Constant.PREF_ID_SEKOLAH)
+            StringBuilder().append(idSekolah.toString())
+                .append("-").append(listSekolah.find { it.id_sekolah.toInt() == idSekolah }?.nama_sekolah.toString())
+                .toString()
+//        idSekolah = prefHelper.getInt(Constant.PREF_ID_SEKOLAH)
         arrayNamaSekolah.forEachIndexed { index, id ->
             if (idNamaSekolah == id) {
                 spinner.setSelection(index)

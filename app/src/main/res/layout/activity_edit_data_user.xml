@@ -44,7 +44,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/username_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                         android:layout_marginTop="10dp"
                         app:passwordToggleEnabled="true">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/password_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/email_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/first_name_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/last_name_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/role_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
