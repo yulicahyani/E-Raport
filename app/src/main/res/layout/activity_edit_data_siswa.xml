@@ -41,7 +41,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -53,8 +52,7 @@
                             android:hint="Username"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="siswa1"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -65,7 +63,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp"
                         app:passwordToggleEnabled="true">
 
@@ -78,8 +75,7 @@
                             android:hint="Password"
                             android:inputType="textPassword"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="12345678"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -90,7 +86,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -102,8 +97,7 @@
                             android:hint="NIS"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="1234"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -114,7 +108,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -126,8 +119,7 @@
                             android:hint="NISN"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="12345678"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -138,7 +130,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -150,8 +141,7 @@
                             android:hint="Nama Siswa"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="Ni Nama Siswa"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -162,7 +152,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -174,8 +163,7 @@
                             android:hint="Nama Panggilan"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -186,7 +174,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -198,8 +185,7 @@
                             android:hint="Tempat/Tanggal Lahir"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="Bali, 11 Juli 2013"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -210,7 +196,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -222,8 +207,7 @@
                             android:hint="Jenis Kelamin"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="Perempuan"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -234,7 +218,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -246,8 +229,7 @@
                             android:hint="Agama"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="Hindu"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -258,7 +240,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -270,8 +251,7 @@
                             android:hint="Alamat"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="Banjar Dinas XYZ"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -282,7 +262,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -294,8 +273,7 @@
                             android:hint="Kelas"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="1"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -306,7 +284,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -318,8 +295,7 @@
                             android:hint="Semester"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="1 (Satu)"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -330,7 +306,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -342,8 +317,7 @@
                             android:hint="Tahun Pelajaran"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="2021/2022"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -356,8 +330,6 @@
                         android:layout_marginEnd="32dp"
                         android:layout_marginTop="18dp"
                         android:text="Id Sekolah"
-                        android:textColor="@color/nav_unselected"
-                        android:textStyle="bold"
                         android:textSize="12sp"
                         android:paddingLeft="17dp"/>
 
@@ -385,7 +357,7 @@
                             android:layout_marginBottom="20dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
-                            android:backgroundTint="@color/nav_unselected"
+                            android:backgroundTint="@color/maroon"
                             android:paddingVertical="15dp"
                             android:text="Batal"
                             android:textColor="@color/white"
@@ -398,7 +370,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="30dp"
                             android:layout_marginBottom="20dp"
-                            android:backgroundTint="@color/nav_unselected"
+                            android:backgroundTint="@color/maroon"
                             android:paddingVertical="15dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"

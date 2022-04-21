@@ -60,7 +60,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="30dp"
                 android:text="lihat detail"
-                android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
         </LinearLayout>

@@ -41,7 +41,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <EditText
@@ -53,8 +52,7 @@
                             android:hint="Username"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="guru1"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -65,7 +63,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp"
                         app:passwordToggleEnabled="true">
 
@@ -78,8 +75,7 @@
                             android:hint="Password"
                             android:inputType="textPassword"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="12345678"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -90,7 +86,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <EditText
@@ -102,8 +97,7 @@
                             android:hint="Email"
                             android:inputType="textEmailAddress"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="guru@gmail.com"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -114,7 +108,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <EditText
@@ -126,8 +119,7 @@
                             android:hint="First Name"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="Guru"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -138,7 +130,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <EditText
@@ -150,8 +141,7 @@
                             android:hint="Last Name"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="Lama"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -162,7 +152,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
                         <EditText
@@ -174,8 +163,7 @@
                             android:hint="Role"
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
-                            android:textColor="@color/nav_unselected"
-                            android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:text="Guru"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -188,8 +176,6 @@
                         android:layout_marginEnd="32dp"
                         android:layout_marginTop="18dp"
                         android:text="Id Sekolah"
-                        android:textColor="@color/nav_unselected"
-                        android:textStyle="bold"
                         android:textSize="12sp"
                         android:paddingLeft="17dp"/>
 
@@ -217,7 +203,7 @@
                             android:layout_marginBottom="20dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
-                            android:backgroundTint="@color/nav_unselected"
+                            android:backgroundTint="@color/maroon"
                             android:paddingVertical="15dp"
                             android:text="Batal"
                             android:textColor="@color/white"
@@ -230,7 +216,7 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="30dp"
                             android:layout_marginBottom="20dp"
-                            android:backgroundTint="@color/nav_unselected"
+                            android:backgroundTint="@color/maroon"
                             android:paddingVertical="15dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"

@@ -44,6 +44,7 @@
                         android:layout_marginTop="20dp"
                         android:text="Nama Guru/Admin"
                         android:textSize="18sp"
+                        android:textColor="@color/black"
                         android:textStyle="bold"
                         android:padding="4dp"/>
 
@@ -66,7 +67,7 @@
                         android:layout_marginTop="4dp"
                         android:text="guru1"
                         android:textSize="18sp"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:padding="4dp"/>
 
                     <TextView
@@ -88,7 +89,7 @@
                         android:layout_marginTop="4dp"
                         android:text="12345678"
                         android:textSize="18sp"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:padding="4dp"/>
 
                     <TextView
@@ -110,7 +111,7 @@
                         android:layout_marginTop="4dp"
                         android:text="guru1@gmail.com"
                         android:textSize="18sp"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:padding="4dp"/>
 
                     <TextView
@@ -154,7 +155,7 @@
                         android:layout_marginTop="4dp"
                         android:text="SD 1 Bali"
                         android:textSize="18sp"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:padding="4dp"/>
 
                     <TextView
@@ -177,7 +178,7 @@
                         android:layout_marginBottom="30dp"
                         android:text="Banjar Dinas XYZ"
                         android:textSize="18sp"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:padding="4dp"/>
 
                 </LinearLayout>
