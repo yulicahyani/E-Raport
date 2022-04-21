@@ -36,7 +36,7 @@ class GradeTypeActivity : AppCompatActivity(), View.OnClickListener {
         activityGradeTypeBinding.cdNph.setOnClickListener(this)
         activityGradeTypeBinding.cdNpts.setOnClickListener(this)
         activityGradeTypeBinding.cdNpas.setOnClickListener(this)
-        activityGradeTypeBinding.cdNilaiAkhirKd.setOnClickListener(this)
+//        activityGradeTypeBinding.cdNilaiAkhirKd.setOnClickListener(this)
 
     }
 

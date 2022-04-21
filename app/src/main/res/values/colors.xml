@@ -10,4 +10,6 @@
     <color name="background">#FFFFFF</color>
     <color name="nav_selected">#FF3700B3</color>
     <color name="nav_unselected">#999999</color>
+    <color name="maroon">#7F0909</color>
+    <color name="yellow">#FFC500</color>
 </resources>

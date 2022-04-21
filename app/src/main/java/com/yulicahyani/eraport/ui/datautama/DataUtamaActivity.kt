@@ -8,6 +8,7 @@ import androidx.appcompat.app.ActionBar
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityDataUtamaBinding
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
+import com.yulicahyani.eraport.ui.datautama.datamapel.DataMapelActivity
 import com.yulicahyani.eraport.ui.datautama.datasiswa.DataSiswaActivity
 import com.yulicahyani.eraport.ui.datautama.datauser.DataUserActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
@@ -37,6 +38,10 @@ class DataUtamaActivity : AppCompatActivity() {
         }
         activityDataUtamaBinding.cdDatauser.setOnClickListener {
             val intent = Intent(this@DataUtamaActivity, DataUserActivity::class.java)
+            startActivity(intent)
+        }
+        activityDataUtamaBinding.cdDatamapel.setOnClickListener {
+            val intent = Intent(this@DataUtamaActivity, DataMapelActivity::class.java)
             startActivity(intent)
         }
     }

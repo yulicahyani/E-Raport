@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yulicahyani.eraport.R
@@ -93,6 +94,32 @@ class DataUserActivity : AppCompatActivity() {
                 }
             }
 
+        })
+
+        adapter.setOnDeleteClickCallback(object : DataUserAdapter.OnDeleteClickCallback {
+            override fun onDeleteClicked(data: ResultsAllUser) {
+                val id_user = data.id_user.toString().toInt()
+                if (id_user != null) {
+                    viewModel.deleteDataUser(
+                        id_user
+                    )
+                }
+
+                viewModel.getResponseDelete().observe(this@DataUserActivity, {
+                    if (it != null) {
+                        if (it.status == 1) {
+                            Toast.makeText(this@DataUserActivity, "Success", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this@DataUserActivity, "Failed", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                })
+
+                val intent = Intent(this@DataUserActivity, DataUtamaActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+
+            }
         })
     }
 

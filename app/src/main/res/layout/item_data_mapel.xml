@@ -48,15 +48,6 @@
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/lihat_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="180dp"
-                android:text="lihat detail"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

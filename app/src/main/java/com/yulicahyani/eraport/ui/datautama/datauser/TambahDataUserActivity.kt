@@ -3,11 +3,13 @@ package com.yulicahyani.eraport.ui.datautama.datauser
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.data.source.remote.api.ApiConfig
 import com.yulicahyani.eraport.data.source.remote.response.ResultsSekolah
@@ -29,6 +31,7 @@ import kotlin.properties.Delegates
 class TambahDataUserActivity : AppCompatActivity() {
 
     private lateinit var activityTambahDataUserBinding: ActivityTambahDataUserBinding
+    private lateinit var viewModel: DataUserViewModel
     private lateinit var idNamaSekolah: String
     private var idSekolah by Delegates.notNull<Int>()
     lateinit var prefHelper: PrefHelper
@@ -51,6 +54,70 @@ class TambahDataUserActivity : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
+
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+            DataUserViewModel::class.java)
+
+        activityTambahDataUserBinding.btnTambah.setOnClickListener {
+            addDataUser()
+        }
+    }
+
+    fun addDataUser() {
+        if (TextUtils.isEmpty(activityTambahDataUserBinding.usernameEt.text.toString())) {
+            activityTambahDataUserBinding.usernameEt.error = "Please enter username"
+            return
+        } else if (TextUtils.isEmpty(activityTambahDataUserBinding.passwordEt.text.toString())) {
+            activityTambahDataUserBinding.passwordEt.error = "Please enter password"
+            return
+        } else if (TextUtils.isEmpty(activityTambahDataUserBinding.emailEt.text.toString())) {
+            activityTambahDataUserBinding.emailEt.error = "Please enter email"
+            return
+        } else if (TextUtils.isEmpty(activityTambahDataUserBinding.firstNameEt.text.toString())) {
+            activityTambahDataUserBinding.firstNameEt.error = "Please enter firstname"
+            return
+        } else if (TextUtils.isEmpty(activityTambahDataUserBinding.lastNameEt.text.toString())) {
+            activityTambahDataUserBinding.lastNameEt.error = "Please enter lastname"
+            return
+        } else if (TextUtils.isEmpty(activityTambahDataUserBinding.roleEt.text.toString())) {
+            activityTambahDataUserBinding.roleEt.error = "Please enter role"
+            return
+        }
+
+        val id_sekolah = idSekolah
+        val email = activityTambahDataUserBinding.emailEt.text.toString()
+        val username = activityTambahDataUserBinding.usernameEt.text.toString()
+        val password = activityTambahDataUserBinding.passwordEt.text.toString()
+        val firstname = activityTambahDataUserBinding.firstNameEt.text.toString()
+        val lastname = activityTambahDataUserBinding.lastNameEt.text.toString()
+        val role = activityTambahDataUserBinding.roleEt.text.toString()
+
+        if (id_sekolah != null && email != null && username != null && firstname != null && lastname != null && role != null) {
+            viewModel.addDataUser(
+                id_sekolah,
+                email,
+                username,
+                password,
+                firstname,
+                lastname,
+                role
+            )
+        }
+
+        viewModel.getResponseCreate().observe(this, {
+            if (it != null) {
+                if (it.status == 1) {
+                    Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@TambahDataUserActivity, DataUtamaActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+
+
     }
 
     private fun setupSpinner() {
