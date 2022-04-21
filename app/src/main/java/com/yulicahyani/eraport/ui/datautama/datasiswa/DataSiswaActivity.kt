@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yulicahyani.eraport.R
@@ -87,6 +88,7 @@ class DataSiswaActivity : AppCompatActivity() {
                 Intent(this@DataSiswaActivity, EditDataSiswaActivity::class.java).also {
                     it.putExtra(EditDataSiswaActivity.EXTRA_ID_SISWA, data.id_siswa)
                     it.putExtra(EditDataSiswaActivity.EXTRA_NAMA_SISWA, data.nama_siswa)
+                    it.putExtra(EditDataSiswaActivity.EXTRA_NAMA_PANGGIL, data.nama_panggilan)
                     it.putExtra(EditDataSiswaActivity.EXTRA_ID_SEKOLAH, data.id_sekolah)
                     it.putExtra(EditDataSiswaActivity.EXTRA_USERNAME, data.username)
                     it.putExtra(EditDataSiswaActivity.EXTRA_PASSWORD, data.password)
@@ -103,6 +105,36 @@ class DataSiswaActivity : AppCompatActivity() {
                 }
             }
 
+        })
+
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+            DataSiswaViewModel::class.java
+        )
+
+        adapter.setOnDeleteClickCallback(object : DataSiswaAdapter.OnDeleteClickCallback {
+            override fun onDeleteClicked(data: ResultsSiswa) {
+                val id_siswa = data.id_siswa.toString().toInt()
+                if (id_siswa != null) {
+                    viewModel.deleteDataSiswa(
+                        id_siswa
+                    )
+                }
+
+                viewModel.getResponseDelete().observe(this@DataSiswaActivity, {
+                    if (it != null) {
+                        if (it.status == 1) {
+                            Toast.makeText(this@DataSiswaActivity, "Success", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this@DataSiswaActivity, "Failed", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                })
+
+                val intent = Intent(this@DataSiswaActivity, DataUtamaActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+
+            }
         })
 
     }

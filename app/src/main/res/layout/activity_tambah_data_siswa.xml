@@ -44,7 +44,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/username_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                         android:layout_marginTop="10dp"
                         app:passwordToggleEnabled="true">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/password_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/nis_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/nisn_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/nama_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/nama_panggil_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -188,7 +188,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/ttl_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -212,7 +212,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/jenis_kelamin_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -236,7 +236,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/agama_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -260,7 +260,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/alamat_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -284,7 +284,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/kelas_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -308,7 +308,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/semester_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -332,7 +332,7 @@
                         android:textColorHint="@color/nav_unselected"
                         android:layout_marginTop="10dp">
 
-                        <EditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tahun_pelajaran_et"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

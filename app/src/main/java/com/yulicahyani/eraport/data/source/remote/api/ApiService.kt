@@ -13,6 +13,10 @@ interface ApiService {
         @Field("password") password: String
     ): Call<LoginResponse>
 
+    //USER
+    @GET("eraport.php?function=getAllUser")
+    fun getAllUser(): Call<UserResponse>
+
     //SEKOLAH
     @GET("eraport.php?function=getAllSekolah")
     fun getAllSekolah(): Call<SekolahResponse>
@@ -36,6 +40,51 @@ interface ApiService {
     fun getSiswaSekolah(
         @Query("id_user") id_user: Int
     ):Call<SiswaResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=createUserSiswa")
+    fun createUserSiswa(
+        @Field("id_sekolah") id_sekolah: Int,
+        @Field("username") username: String,
+        @Field("password") password: String,
+        @Field("nis") nis: String,
+        @Field("nisn") nisn: String,
+        @Field("nama_siswa") nama_siswa: String,
+        @Field("nama_panggilan") nama_panggilan: String,
+        @Field("ttl") ttl: String,
+        @Field("jenis_kelamin") jenis_kelamin: String,
+        @Field("agama") agama: String,
+        @Field("alamat") alamat: String,
+        @Field("kelas") kelas: Int,
+        @Field("semester") semester: Int,
+        @Field("tahun_ajaran") tahun_ajaran: String,
+    ): Call<GeneralResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=updateUserSiswa")
+    fun updateUserSiswa(
+        @Field("id_siswa") id_siswa: Int,
+        @Field("id_sekolah") id_sekolah: Int,
+        @Field("username") username: String,
+        @Field("password") password: String,
+        @Field("nis") nis: String,
+        @Field("nisn") nisn: String,
+        @Field("nama_siswa") nama_siswa: String,
+        @Field("nama_panggilan") nama_panggilan: String,
+        @Field("ttl") ttl: String,
+        @Field("jenis_kelamin") jenis_kelamin: String,
+        @Field("agama") agama: String,
+        @Field("alamat") alamat: String,
+        @Field("kelas") kelas: Int,
+        @Field("semester") semester: Int,
+        @Field("tahun_ajaran") tahun_ajaran: String,
+    ): Call<GeneralResponse>
+
+    @FormUrlEncoded
+    @POST("eraport.php?function=deleteUserSiswa")
+    fun deleteUserSiswa(
+        @Field("id_siswa") id_siswa: Int
+    ): Call<GeneralResponse>
 
     //MAPEL
     @GET("eraport.php?function=getMapel")

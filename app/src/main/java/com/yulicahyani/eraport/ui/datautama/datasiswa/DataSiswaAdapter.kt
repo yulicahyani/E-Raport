@@ -1,17 +1,21 @@
 package com.yulicahyani.eraport.ui.datautama.datasiswa
 
 import android.content.Intent
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.yulicahyani.eraport.data.source.remote.response.ResultsSiswa
 import com.yulicahyani.eraport.databinding.ItemDataSiswaBinding
+import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 
 class DataSiswaAdapter : RecyclerView.Adapter<DataSiswaAdapter.SiswaViewHolder>() {
 
     private val listData = ArrayList<ResultsSiswa>()
     private lateinit var onItemClickCallback: OnItemClickCallback
     private lateinit var onEditClickCallback: OnEditClickCallback
+    private lateinit var onDeleteClickCallback: OnDeleteClickCallback
 
     fun setOnClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
@@ -19,6 +23,9 @@ class DataSiswaAdapter : RecyclerView.Adapter<DataSiswaAdapter.SiswaViewHolder>(
 
     fun setOnEditClickCallback(onEditClickCallback: OnEditClickCallback) {
         this.onEditClickCallback = onEditClickCallback
+    }
+    fun setOnDeleteClickCallback(onDeleteClickCallback: OnDeleteClickCallback) {
+        this.onDeleteClickCallback = onDeleteClickCallback
     }
 
     fun setData(siswas: ArrayList<ResultsSiswa>) {
@@ -53,6 +60,10 @@ class DataSiswaAdapter : RecyclerView.Adapter<DataSiswaAdapter.SiswaViewHolder>(
                 onEditClickCallback.onEditClicked(siswa)
             }
 
+            binding.hapus.setOnClickListener {
+                onDeleteClickCallback.onDeleteClicked(siswa)
+            }
+
             binding.apply {
                 tvNameSiswa.text = siswa.nama_siswa
             }
@@ -67,5 +78,9 @@ class DataSiswaAdapter : RecyclerView.Adapter<DataSiswaAdapter.SiswaViewHolder>(
 
     interface OnEditClickCallback{
         fun onEditClicked(data: ResultsSiswa)
+    }
+
+    interface OnDeleteClickCallback{
+        fun onDeleteClicked(data: ResultsSiswa)
     }
 }
