@@ -3,6 +3,7 @@ package com.yulicahyani.eraport.ui.profil
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.databinding.ActivityProfilBinding
@@ -11,6 +12,7 @@ import com.yulicahyani.eraport.helper.PrefHelper
 import com.yulicahyani.eraport.ui.dashboard.DashboardActivity
 import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
 import com.yulicahyani.eraport.ui.inputnilai.InputNilaiActivity
+import com.yulicahyani.eraport.ui.login.LoginActivity
 import com.yulicahyani.eraport.ui.raport.RaportActivity
 
 class ProfilActivity : AppCompatActivity() {
@@ -42,6 +44,14 @@ class ProfilActivity : AppCompatActivity() {
 
         activityProfilBinding.btnEdit.setOnClickListener {
             val intent = Intent(this@ProfilActivity, EditProfilActivity::class.java)
+            startActivity(intent)
+        }
+
+        activityProfilBinding.btnLogout.setOnClickListener {
+            prefHelper.clear()
+            Toast.makeText(this, "Success Logout", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
     }
