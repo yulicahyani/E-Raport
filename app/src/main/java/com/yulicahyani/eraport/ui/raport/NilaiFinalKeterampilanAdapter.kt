@@ -9,11 +9,11 @@ import com.yulicahyani.eraport.databinding.ItemNilaiKeterampilanBinding
 class NilaiFinalKeterampilanAdapter : RecyclerView.Adapter<NilaiFinalKeterampilanAdapter.FinalKeterampilanViewHolder>() {
 
     private val listData = ArrayList<ResultsNilaiFinalKeterampilan>()
-    private lateinit var onItemClickCallback: OnItemClickCallback
+//    private lateinit var onItemClickCallback: OnItemClickCallback
 
-    fun setOnClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
+//    fun setOnClickCallback(onItemClickCallback: OnItemClickCallback) {
+//        this.onItemClickCallback = onItemClickCallback
+//    }
 
     fun setData(nilai: ArrayList<ResultsNilaiFinalKeterampilan>) {
         listData.clear()
@@ -37,9 +37,9 @@ class NilaiFinalKeterampilanAdapter : RecyclerView.Adapter<NilaiFinalKeterampila
     inner class FinalKeterampilanViewHolder(private val binding: ItemNilaiKeterampilanBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(nilai: ResultsNilaiFinalKeterampilan) {
-            binding.root.setOnClickListener {
-                onItemClickCallback.onItemClicked(nilai)
-            }
+//            binding.root.setOnClickListener {
+//                onItemClickCallback.onItemClicked(nilai)
+//            }
 
             binding.apply {
                 namaMapel.text = nilai.nama_mapel
@@ -51,9 +51,9 @@ class NilaiFinalKeterampilanAdapter : RecyclerView.Adapter<NilaiFinalKeterampila
 
     }
 
-    interface OnItemClickCallback {
-        fun onItemClicked(data: ResultsNilaiFinalKeterampilan)
-    }
+//    interface OnItemClickCallback {
+//        fun onItemClicked(data: ResultsNilaiFinalKeterampilan)
+//    }
 
 
 }

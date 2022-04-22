@@ -46,7 +46,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:text="lihat raport"
-                android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
         </LinearLayout>

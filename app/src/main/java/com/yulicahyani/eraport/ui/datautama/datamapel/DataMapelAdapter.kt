@@ -10,11 +10,11 @@ import com.yulicahyani.eraport.ui.inputnilai.listmapel.ListMapelAdapter
 class DataMapelAdapter : RecyclerView.Adapter<DataMapelAdapter.MapelViewHolder>() {
 
     private val listData = ArrayList<ResultsMapel>()
-    private lateinit var onItemClickCallback: OnItemClickCallback
-
-    fun setOnClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
+//    private lateinit var onItemClickCallback: OnItemClickCallback
+//
+//    fun setOnClickCallback(onItemClickCallback: OnItemClickCallback) {
+//        this.onItemClickCallback = onItemClickCallback
+//    }
 
     fun setData(mapel: ArrayList<ResultsMapel>) {
         listData.clear()
@@ -36,16 +36,16 @@ class DataMapelAdapter : RecyclerView.Adapter<DataMapelAdapter.MapelViewHolder>(
 
     inner  class MapelViewHolder (private val binding : ItemDataMapelBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(mapel : ResultsMapel){
-            binding.root.setOnClickListener {
-                onItemClickCallback.onItemClicked(mapel)
-            }
+//            binding.root.setOnClickListener {
+//                onItemClickCallback.onItemClicked(mapel)
+//            }
             binding.apply {
                 tvNameMapel.text = mapel.nama_mapel
             }
         }
     }
 
-    interface OnItemClickCallback {
-        fun onItemClicked(data: ResultsMapel)
-    }
+//    interface OnItemClickCallback {
+//        fun onItemClicked(data: ResultsMapel)
+//    }
 }

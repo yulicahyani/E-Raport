@@ -9,11 +9,11 @@ import com.yulicahyani.eraport.databinding.ItemNilaiPengetahuanBinding
 class NilaiFinalPengetahuanAdapter : RecyclerView.Adapter<NilaiFinalPengetahuanAdapter.FinalPengetahuanViewHolder>() {
 
     private val listData = ArrayList<ResultsNilaiFinalPengetahuan>()
-    private lateinit var onItemClickCallback: OnItemClickCallback
-
-    fun setOnClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
+//    private lateinit var onItemClickCallback: OnItemClickCallback
+//
+//    fun setOnClickCallback(onItemClickCallback: OnItemClickCallback) {
+//        this.onItemClickCallback = onItemClickCallback
+//    }
 
     fun setData(nilai: ArrayList<ResultsNilaiFinalPengetahuan>) {
         listData.clear()
@@ -37,9 +37,9 @@ class NilaiFinalPengetahuanAdapter : RecyclerView.Adapter<NilaiFinalPengetahuanA
     inner class FinalPengetahuanViewHolder(private val binding: ItemNilaiPengetahuanBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(nilai: ResultsNilaiFinalPengetahuan) {
-            binding.root.setOnClickListener {
-                onItemClickCallback.onItemClicked(nilai)
-            }
+//            binding.root.setOnClickListener {
+//                onItemClickCallback.onItemClicked(nilai)
+//            }
 
             binding.apply {
                 namaMapel.text = nilai.nama_mapel
@@ -51,9 +51,9 @@ class NilaiFinalPengetahuanAdapter : RecyclerView.Adapter<NilaiFinalPengetahuanA
 
     }
 
-    interface OnItemClickCallback {
-        fun onItemClicked(data: ResultsNilaiFinalPengetahuan)
-    }
+//    interface OnItemClickCallback {
+//        fun onItemClicked(data: ResultsNilaiFinalPengetahuan)
+//    }
 
 
 }

@@ -22,7 +22,7 @@
                 android:id="@+id/btn_tambah_user"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/nav_unselected"
+                android:backgroundTint="@color/maroon"
                 android:paddingVertical="15dp"
                 android:layout_marginStart="86dp"
                 android:layout_marginTop="50dp"
