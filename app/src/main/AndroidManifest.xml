@@ -13,7 +13,8 @@
         android:theme="@style/Theme.ERaport"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.splashscreen.SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -41,6 +41,7 @@ class DataMapelAdapter : RecyclerView.Adapter<DataMapelAdapter.MapelViewHolder>(
 //            }
             binding.apply {
                 tvNameMapel.text = mapel.nama_mapel
+                kkm.text = mapel.kkm
             }
         }
     }
