@@ -38,7 +38,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:layout_margin="8dp">
 
                         <LinearLayout
                             android:layout_width="250dp"
@@ -61,7 +62,7 @@
 
                                 <TextView
                                     android:id="@+id/nama"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:gravity="start"
                                     android:layout_marginStart="0dp"
@@ -226,9 +227,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start"
-                        android:layout_marginStart="0dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="15dp"
-                        android:text="A. Kompetensi Sikap"
+                        android:text="@string/kompetensi_dasar"
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         android:textStyle="bold"
@@ -270,6 +271,7 @@
                                 android:gravity="start"
                                 android:id="@+id/spiritual"
                                 android:paddingHorizontal="4dp"
+                                android:padding="16dp"
                                 android:text="Yuli baik dalam beribadah. blablabla blabala balabala balabalabnb balabab abalabalb abalabajdhkl najkhdslka "
                                 android:textSize="12sp"
                                 android:textColor="@color/black"/>
@@ -313,6 +315,7 @@
                                 android:gravity="start"
                                 android:id="@+id/sosial"
                                 android:paddingHorizontal="4dp"
+                                android:padding="16dp"
                                 android:text="Yuli baik dalam beribadah. blablabla blabala balabala balabalabnb balabab abalabalb abalabajdhkl najkhdslka "
                                 android:textSize="12sp"
                                 android:textColor="@color/black"/>
@@ -325,7 +328,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start"
-                        android:layout_marginStart="0dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="15dp"
                         android:text="B. Kompetensi Pengetahuan dan Keterampilan"
                         android:textSize="12sp"
@@ -337,7 +340,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start"
-                        android:layout_marginStart="0dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="2dp"
                         android:text="KKM Satuan Pendidikan : 60"
                         android:textSize="12sp"
@@ -417,6 +420,8 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="@color/background"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:itemIconTint="@drawable/color_state"
         app:itemTextColor="@drawable/color_state"
         app:menu="@menu/menu_bottom_nav" />

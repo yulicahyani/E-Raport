@@ -39,7 +39,7 @@ class ProfilActivity : AppCompatActivity() {
         activityProfilBinding.alamatSekolah.text = prefHelper.getString(Constant.PREF_ALAMAT_SEKOLAH)
 
         val item = activityProfilBinding.navigation.menu.findItem(R.id.nav_dashboard)
-        item.setChecked(true)
+        item.isChecked = true
         navigationListener()
 
         activityProfilBinding.btnEdit.setOnClickListener {

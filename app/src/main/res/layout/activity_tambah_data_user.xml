@@ -8,11 +8,12 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nested_scroll_view"
-        android:layout_above="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/navigation"
         android:scrollbars="none"
         android:scrollingCache="true">
+
         <LinearLayout
             android:id="@+id/ll_content"
             android:layout_width="match_parent"
@@ -40,9 +41,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
-                        android:layout_marginTop="10dp">
+                        android:textColorHint="@color/nav_unselected">
 
                         <EditText
                             android:id="@+id/username_et"
@@ -54,8 +55,7 @@
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            />
+                            android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,9 +64,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
                         android:textColorHint="@color/nav_unselected"
-                        android:layout_marginTop="10dp"
                         app:passwordToggleEnabled="true">
 
                         <EditText
@@ -79,8 +79,7 @@
                             android:inputType="textPassword"
                             android:paddingTop="28dp"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            />
+                            android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,9 +88,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
-                        android:layout_marginTop="10dp">
+                        android:textColorHint="@color/nav_unselected">
 
                         <EditText
                             android:id="@+id/email_et"
@@ -103,8 +102,7 @@
                             android:inputType="textEmailAddress"
                             android:paddingTop="28dp"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            />
+                            android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,9 +111,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
-                        android:layout_marginTop="10dp">
+                        android:textColorHint="@color/nav_unselected">
 
                         <EditText
                             android:id="@+id/first_name_et"
@@ -127,8 +125,7 @@
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            />
+                            android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,9 +134,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
-                        android:layout_marginTop="10dp">
+                        android:textColorHint="@color/nav_unselected">
 
                         <EditText
                             android:id="@+id/last_name_et"
@@ -151,8 +148,7 @@
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            />
+                            android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -161,9 +157,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
-                        android:textColorHint="@color/nav_unselected"
-                        android:layout_marginTop="10dp">
+                        android:textColorHint="@color/nav_unselected">
 
                         <EditText
                             android:id="@+id/role_et"
@@ -175,69 +171,69 @@
                             android:inputType="textPersonName"
                             android:paddingTop="28dp"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            />
+                            android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="32dp"
-                        android:layout_marginEnd="32dp"
                         android:layout_marginTop="18dp"
+                        android:layout_marginEnd="32dp"
+                        android:gravity="start"
+                        android:paddingLeft="17dp"
                         android:text="Id Sekolah"
                         android:textColor="@color/nav_unselected"
-                        android:textStyle="bold"
                         android:textSize="12sp"
-                        android:paddingLeft="17dp"/>
+                        android:textStyle="bold" />
 
                     <Spinner
                         android:id="@+id/spinner_id_sekolah"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
-                        android:layout_marginEnd="32dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginEnd="32dp"
                         android:padding="4dp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/btn_batal"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="30dp"
-                            android:layout_marginBottom="20dp"
                             android:layout_marginStart="8dp"
+                            android:layout_marginTop="30dp"
                             android:layout_marginEnd="8dp"
-                            android:backgroundTint="@color/maroon"
-                            android:paddingVertical="15dp"
-                            android:text="Batal"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/btn_border"
+                            android:text="@string/cancel"
+                            android:textAllCaps="false"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="14sp"
+                            app:backgroundTint="@null" />
 
                         <Button
                             android:id="@+id/btn_tambah"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginTop="30dp"
-                            android:layout_marginBottom="20dp"
-                            android:backgroundTint="@color/maroon"
-                            android:paddingVertical="15dp"
                             android:layout_marginStart="8dp"
+                            android:layout_marginTop="30dp"
                             android:layout_marginEnd="8dp"
-                            android:text="Tambah"
+                            android:layout_marginBottom="20dp"
+                            android:background="@drawable/btn_custom"
+                            android:text="@string/tambah"
+                            android:textAllCaps="false"
                             android:textColor="@color/white"
-                            android:textSize="14sp" />
-
+                            android:textSize="14sp"
+                            app:backgroundTint="@null" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -254,6 +250,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         android:background="@color/background"
         app:itemIconTint="@drawable/color_state"
         app:itemTextColor="@drawable/color_state"

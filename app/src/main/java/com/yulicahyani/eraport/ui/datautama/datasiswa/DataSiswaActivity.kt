@@ -49,7 +49,7 @@ class DataSiswaActivity : AppCompatActivity() {
             }
         })
 
-        activityDataSiswaBinding.btnTambahSiswa.setOnClickListener {
+        activityDataSiswaBinding.fabAdd.setOnClickListener {
             val intent = Intent(this@DataSiswaActivity, TambahDataSiswaActivity::class.java)
             startActivity(intent)
         }

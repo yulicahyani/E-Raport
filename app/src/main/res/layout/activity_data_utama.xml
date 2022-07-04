@@ -46,7 +46,7 @@
                         android:layout_marginTop="24dp"
                         android:text="@string/datasiswa"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,11 +59,11 @@
                         app:layout_constraintTop_toBottomOf="@+id/data_siswa" />
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_marginEnd="24dp"
                         android:contentDescription="@string/icon_add_grade"
-                        android:src="@drawable/ic_data"
+                        android:src="@drawable/data_siswa"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -95,7 +95,7 @@
                         android:layout_marginTop="24dp"
                         android:text="@string/datamapel"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -108,11 +108,11 @@
                         app:layout_constraintTop_toBottomOf="@+id/data_mapel" />
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_marginEnd="24dp"
                         android:contentDescription="@string/icon_add_grade"
-                        android:src="@drawable/ic_data"
+                        android:src="@drawable/data_mapel"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -141,10 +141,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        android:layout_marginTop="24dp"
+                        android:layout_marginTop="16dp"
                         android:text="@string/datauser"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,11 +157,11 @@
                         app:layout_constraintTop_toBottomOf="@+id/data_user" />
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_marginEnd="24dp"
                         android:contentDescription="@string/icon_add_grade"
-                        android:src="@drawable/ic_data"
+                        android:src="@drawable/data_guru"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -179,6 +179,8 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="@color/background"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:itemIconTint="@drawable/color_state"
         app:itemTextColor="@drawable/color_state"
         app:menu="@menu/menu_bottom_nav" />

@@ -13,11 +13,13 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="176dp"
         android:layout_marginEnd="32dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textAlignment="center"
+        android:gravity="center"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:fontFamily="@font/poppins_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,27 +30,30 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         android:textColorHint="@color/nav_unselected"
         app:counterEnabled="true"
         app:counterMaxLength="50"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45">
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <EditText
             android:id="@+id/username_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:ems="10"
-            android:hint="Username"
+            android:ems="8"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/username"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:paddingTop="28dp"
-            android:textColor="@color/black" />
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,29 +72,45 @@
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:paddingTop="28dp"
-            android:hint="Password"
+            android:autofillHints="no"
             android:background="@color/white"
+            android:ems="8"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingTop="28dp"
+            android:textSize="14sp"
             android:textColor="@color/black"
-            android:inputType="textPassword" />
+            tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="86dp"
-        android:backgroundTint="@color/maroon"
-        android:paddingVertical="15dp"
-        android:text="Login"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/dark_blue"
+        android:paddingVertical="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/login"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="14sp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

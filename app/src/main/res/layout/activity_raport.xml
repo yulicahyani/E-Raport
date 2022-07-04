@@ -48,6 +48,8 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="@color/background"

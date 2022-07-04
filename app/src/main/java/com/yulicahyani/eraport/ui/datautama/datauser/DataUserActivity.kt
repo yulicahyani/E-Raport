@@ -1,5 +1,6 @@
 package com.yulicahyani.eraport.ui.datautama.datauser
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -27,6 +28,7 @@ class DataUserActivity : AppCompatActivity() {
     private lateinit var viewModel: DataUserViewModel
     private lateinit var adapter: DataUserAdapter
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityDataUserBinding = ActivityDataUserBinding.inflate(layoutInflater)
@@ -36,7 +38,7 @@ class DataUserActivity : AppCompatActivity() {
         item.isChecked = true
         navigationListener()
 
-        activityDataUserBinding.btnTambahUser.setOnClickListener {
+        activityDataUserBinding.fabAdd.setOnClickListener {
             val intent = Intent(this@DataUserActivity, TambahDataUserActivity::class.java)
             startActivity(intent)
         }
@@ -47,13 +49,13 @@ class DataUserActivity : AppCompatActivity() {
         viewModel.findUser()
 
         adapter = DataUserAdapter()
-        viewModel.getAllUser().observe(this, {
-            if(it!=null){
+        viewModel.getAllUser().observe(this) {
+            if (it != null) {
                 showProgressBar(false)
                 adapter.setData(it)
                 adapter.notifyDataSetChanged()
             }
-        })
+        }
 
         activityDataUserBinding.apply {
             rvUser.layoutManager = LinearLayoutManager(this@DataUserActivity)

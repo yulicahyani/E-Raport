@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.yulicahyani.eraport.data.source.local.entity.UserEntity
 import com.yulicahyani.eraport.data.source.remote.api.ApiConfig
@@ -27,16 +28,20 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityLoginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(activityLoginBinding.root)
+        supportActionBar?.hide()
+        showProgressBar(false)
 
         prefHelper = PrefHelper(this)
 
         activityLoginBinding.btnLogin.setOnClickListener {
-
+            showProgressBar(true)
             if (TextUtils.isEmpty(activityLoginBinding.usernameEt.text.toString())) {
                 activityLoginBinding.usernameEt.error = "Please enter username"
+                showProgressBar(false)
                 return@setOnClickListener
             } else if (TextUtils.isEmpty(activityLoginBinding.etPassword.text.toString())) {
                 activityLoginBinding.etPassword.error = "Please enter password"
+                showProgressBar(false)
                 return@setOnClickListener
             }
 
@@ -47,6 +52,7 @@ class LoginActivity : AppCompatActivity() {
                     response: Response<LoginResponse>
                 ){
                     if (response.isSuccessful) {
+                        showProgressBar(false)
                         Log.e("LoginActivity", response.toString())
                         if(response.body()?.status == 1){
                             Toast.makeText(
@@ -116,5 +122,14 @@ class LoginActivity : AppCompatActivity() {
         prefHelper.put( Constant.PREF_SEKOLAH, user.nama_sekolah )
         prefHelper.put( Constant.PREF_ALAMAT_SEKOLAH, user.alamat_sekolah )
         prefHelper.put( Constant.PREF_IS_LOGIN, true)
+    }
+
+
+    private fun showProgressBar(state: Boolean) {
+        if (state) {
+            activityLoginBinding.progressBar.visibility = View.VISIBLE
+        } else {
+            activityLoginBinding.progressBar.visibility = View.GONE
+        }
     }
 }

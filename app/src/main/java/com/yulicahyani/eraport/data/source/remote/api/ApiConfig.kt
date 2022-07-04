@@ -1,5 +1,6 @@
 package com.yulicahyani.eraport.data.source.remote.api
 
+import com.yulicahyani.eraport.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -14,7 +15,7 @@ class ApiConfig {
                 .addInterceptor(loggingInterceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://ourdev.000webhostapp.com/api/")
+                .baseUrl(BuildConfig.API_HOST)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

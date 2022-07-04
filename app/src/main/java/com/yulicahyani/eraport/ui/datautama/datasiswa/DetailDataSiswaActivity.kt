@@ -64,7 +64,6 @@ class DetailDataSiswaActivity : AppCompatActivity() {
         val nis_nisn = StringBuilder()
         activityDetailDataSiswaBinding.nama.text = intent.getStringExtra(EXTRA_NAMA_SISWA)
         activityDetailDataSiswaBinding.agama.text = intent.getStringExtra(EXTRA_AGAMA)
-        activityDetailDataSiswaBinding.alamatSiswa.text = intent.getStringExtra(EXTRA_ALAMAT)
         activityDetailDataSiswaBinding.jenisKelamin.text = intent.getStringExtra(EXTRA_JENIS_KELAMIN)
         activityDetailDataSiswaBinding.kelas.text = intent.getStringExtra(EXTRA_KELAS)
         activityDetailDataSiswaBinding.nis.text = nis_nisn.append(intent.getStringExtra(EXTRA_NIS)).append("/").append(intent.getStringExtra(EXTRA_NISN))

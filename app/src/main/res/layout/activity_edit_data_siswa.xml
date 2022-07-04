@@ -357,10 +357,11 @@
                             android:layout_marginBottom="20dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
-                            android:backgroundTint="@color/maroon"
-                            android:paddingVertical="15dp"
-                            android:text="Batal"
-                            android:textColor="@color/white"
+                            android:text="@string/cancel"
+                            android:textAllCaps="false"
+                            app:backgroundTint="@null"
+                            android:background="@drawable/btn_border"
+                            android:textColor="@color/black"
                             android:textSize="14sp" />
 
                         <Button
@@ -370,11 +371,12 @@
                             android:layout_gravity="center"
                             android:layout_marginTop="30dp"
                             android:layout_marginBottom="20dp"
-                            android:backgroundTint="@color/maroon"
-                            android:paddingVertical="15dp"
+                            app:backgroundTint="@null"
+                            android:background="@drawable/btn_custom"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
-                            android:text="Simpan"
+                            android:textAllCaps="false"
+                            android:text="@string/save"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
 
@@ -396,6 +398,8 @@
         android:layout_gravity="bottom"
         android:background="@color/background"
         app:itemIconTint="@drawable/color_state"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:itemTextColor="@drawable/color_state"
         app:menu="@menu/menu_bottom_nav" />
 

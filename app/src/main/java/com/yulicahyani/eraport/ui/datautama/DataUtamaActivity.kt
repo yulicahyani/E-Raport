@@ -28,7 +28,7 @@ class DataUtamaActivity : AppCompatActivity() {
         actionBar?.title = "Data Utama"
 
         val item = activityDataUtamaBinding.navigation.menu.findItem(R.id.nav_data_utama)
-        item.setChecked(true)
+        item.isChecked = true
 
         navigationListener()
 

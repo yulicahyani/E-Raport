@@ -46,7 +46,7 @@ class ListRaportSemesterActivity : AppCompatActivity() {
         actionBar?.title = "Raport"
 
         val item = listRaportSemesterBinding.navigation.menu.findItem(R.id.nav_raport)
-        item.setChecked(true)
+        item.isChecked = true
         navigationListener()
 
         prefHelper = PrefHelper(this)

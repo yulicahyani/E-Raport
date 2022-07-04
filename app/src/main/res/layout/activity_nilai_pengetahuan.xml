@@ -20,18 +20,17 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/tv_name_siswa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:padding="4dp"
                 android:text="@string/nama_siswa"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -65,10 +64,10 @@
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="16dp"
                         android:gravity="start"
-                        android:paddingLeft="17dp"
+                        android:paddingStart="17dp"
                         android:text="@string/name_tema"
-                        android:textColor="@color/nav_unselected"
-                        android:textSize="20sp" />
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/tv_name_kd"
@@ -78,10 +77,10 @@
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="16dp"
                         android:gravity="start"
-                        android:paddingLeft="17dp"
+                        android:paddingStart="17dp"
                         android:text="@string/name_kd"
-                        android:textColor="@color/nav_unselected"
-                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -92,10 +91,9 @@
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="16dp"
                         android:gravity="start"
-                        android:paddingLeft="17dp"
+                        android:paddingStart="17dp"
                         android:text="@string/deskripsi_kd"
-                        android:textColor="@color/nav_unselected"
-                        android:textSize="18sp"/>
+                        android:textSize="12sp" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/nilai"
@@ -138,11 +136,12 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginEnd="16dp"
-                            android:backgroundTint="@color/nav_unselected"
-                            android:paddingVertical="15dp"
+                            android:background="@drawable/btn_custom"
                             android:text="@string/tambah"
+                            android:textAllCaps="false"
                             android:textColor="@color/white"
                             android:textSize="14sp"
+                            app:backgroundTint="@null"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -154,11 +153,12 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginEnd="16dp"
-                            android:backgroundTint="@color/maroon"
-                            android:paddingVertical="15dp"
+                            android:background="@drawable/btn_custom"
                             android:text="@string/update"
+                            android:textAllCaps="false"
                             android:textColor="@color/white"
                             android:textSize="14sp"
+                            app:backgroundTint="@null"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -169,11 +169,12 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginStart="16dp"
-                            android:backgroundTint="@color/maroon"
-                            android:paddingVertical="15dp"
+                            android:background="@drawable/btn_border"
                             android:text="@string/cancel"
-                            android:textColor="@color/white"
+                            android:textAllCaps="false"
+                            android:textColor="@color/dark_blue"
                             android:textSize="14sp"
+                            app:backgroundTint="@null"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -193,6 +194,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         android:layout_gravity="bottom"
         android:background="@color/background"
         app:itemIconTint="@drawable/color_state"

@@ -30,7 +30,7 @@
                 android:padding="4dp"
                 android:text="@string/penilaian_sikap_spritual"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
                     android:padding="4dp"
                     android:text="@string/nama_siswa"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tv_desc_spiritual"
@@ -71,7 +71,7 @@
                     android:layout_marginBottom="8dp"
                     android:padding="4dp"
                     android:text="@string/belum_dinilai"
-                    android:textSize="16sp" />
+                    android:textSize="12sp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -104,7 +104,7 @@
                         android:paddingLeft="17dp"
                         android:text="@string/keterangan_nilai"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -116,7 +116,7 @@
                         android:paddingLeft="17dp"
                         android:text="@string/verygood"
                         android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -128,7 +128,7 @@
                         android:paddingLeft="17dp"
                         android:text="@string/good"
                         android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -140,7 +140,7 @@
                         android:paddingLeft="17dp"
                         android:text="@string/notgood"
                         android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -240,11 +240,12 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginEnd="16dp"
-                            android:backgroundTint="@color/nav_unselected"
-                            android:paddingVertical="15dp"
+                            app:backgroundTint="@null"
+                            android:background="@drawable/btn_custom"
                             android:text="@string/tambah"
                             android:textColor="@color/white"
                             android:textSize="14sp"
+                            android:textAllCaps="false"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -256,11 +257,12 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginEnd="16dp"
-                            android:backgroundTint="@color/maroon"
-                            android:paddingVertical="15dp"
+                            app:backgroundTint="@null"
+                            android:background="@drawable/btn_custom"
                             android:text="@string/update"
                             android:textColor="@color/white"
                             android:textSize="14sp"
+                            android:textAllCaps="false"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -271,11 +273,12 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginStart="16dp"
-                            android:backgroundTint="@color/maroon"
-                            android:paddingVertical="15dp"
+                            app:backgroundTint="@null"
+                            android:background="@drawable/btn_border"
                             android:text="@string/cancel"
-                            android:textColor="@color/white"
+                            android:textColor="@color/dark_blue"
                             android:textSize="14sp"
+                            android:textAllCaps="false"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -296,7 +299,7 @@
                 android:padding="4dp"
                 android:text="@string/penilaian"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -312,6 +315,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         android:background="@color/background"
         app:itemIconTint="@drawable/color_state"
         app:itemTextColor="@drawable/color_state"

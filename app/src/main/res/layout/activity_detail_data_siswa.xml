@@ -8,11 +8,12 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nested_scroll_view"
-        android:layout_above="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/navigation"
         android:scrollbars="none"
         android:scrollingCache="true">
+
         <LinearLayout
             android:id="@+id/ll_content"
             android:layout_width="match_parent"
@@ -33,329 +34,223 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/nama"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="20dp"
-                        android:text="Nama Siswa"
+                        android:gravity="start"
+                        android:text="@string/name_siswa"
                         android:textColor="@color/black"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:padding="4dp"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="20dp"
-                        android:text="Username"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:layout_marginEnd="15dp"
+                        android:gravity="start"
+                        android:text="@string/username"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="15dp"
+                        android:gravity="start"
+                        android:text="@string/username"
                         android:textColor="@color/black"
-                        android:text="siswa1"
-                        android:textSize="18sp"
-                        android:padding="4dp"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="Password"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:layout_marginEnd="15dp"
+                        android:gravity="start"
+                        android:text="@string/password"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
-                        android:text="12345678"
-                        android:textSize="18sp"
+                        android:layout_marginEnd="15dp"
+                        android:gravity="start"
+                        android:text="@string/password"
                         android:textColor="@color/black"
-                        android:padding="4dp"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="NIS/NISN"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:gravity="start"
+                        android:text="@string/nisn"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/nis"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
-                        android:text="1234/1234567890"
+                        android:gravity="start"
+                        android:text="@string/nisn"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:padding="4dp"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="Tempat/Tanggal Lahir"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:gravity="start"
+                        android:text="@string/ttl"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/ttl"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
-                        android:text="Buleleng, 1 Juli 2013"
+                        android:gravity="start"
+                        android:text="@string/ttl"
                         android:textColor="@color/black"
-                        android:padding="4dp"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="Jenis Kelamin"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:gravity="start"
+                        android:text="@string/gender"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/jenis_kelamin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
-                        android:text="Perempuan"
+                        android:gravity="start"
+                        android:text="@string/gender"
                         android:textColor="@color/black"
-                        android:padding="4dp"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="Agama"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:gravity="start"
+                        android:text="@string/religion"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/agama"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
-                        android:text="Hindu"
+                        android:gravity="start"
+                        android:text="@string/religion"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:padding="4dp"/>
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:gravity="start"-->
-<!--                        android:layout_marginStart="15dp"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:text="Pendidikan Sebelumnya"-->
-<!--                        android:textSize="14sp"-->
-<!--                        android:padding="4dp"/>-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/pendidikan_sebelumnya"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:gravity="start"-->
-<!--                        android:layout_marginStart="15dp"-->
-<!--                        android:layout_marginTop="4dp"-->
-<!--                        android:text="Tidak TK"-->
-<!--                        android:textSize="18sp"-->
-<!--                        android:textStyle="bold"-->
-<!--                        android:padding="4dp"/>-->
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="Alamat Peserta Didik"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
-
-                    <TextView
-                        android:id="@+id/alamat_siswa"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:gravity="start"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
-                        android:text="Banjar Dinas XYZ"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:padding="4dp"/>
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:gravity="start"-->
-<!--                        android:layout_marginStart="15dp"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:text="Nama Ayah"-->
-<!--                        android:textSize="14sp"-->
-<!--                        android:padding="4dp"/>-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/nama_ayah"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:gravity="start"-->
-<!--                        android:layout_marginStart="15dp"-->
-<!--                        android:layout_marginTop="4dp"-->
-<!--                        android:text="Nama Ayah"-->
-<!--                        android:textSize="18sp"-->
-<!--                        android:textStyle="bold"-->
-<!--                        android:padding="4dp"/>-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:gravity="start"-->
-<!--                        android:layout_marginStart="15dp"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:text="Nama Ibu"-->
-<!--                        android:textSize="14sp"-->
-<!--                        android:padding="4dp"/>-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/nama_ibu"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:gravity="start"-->
-<!--                        android:layout_marginStart="15dp"-->
-<!--                        android:layout_marginTop="4dp"-->
-<!--                        android:text="Nama Ibu"-->
-<!--                        android:textSize="18sp"-->
-<!--                        android:textStyle="bold"-->
-<!--                        android:padding="4dp"/>-->
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="start"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Nama Sekolah"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:text="@string/school_name"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/nama_sekolah"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
-                        android:text="SD N 1 Bali"
+                        android:gravity="start"
+                        android:text="@string/school_name"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:padding="4dp"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="Kelas"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:gravity="start"
+                        android:text="@string/grade"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/kelas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
-                        android:text="1"
-                        android:textSize="18sp"
+                        android:gravity="start"
+                        android:text="@string/grade"
                         android:textColor="@color/black"
-                        android:padding="4dp"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="Semester"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:gravity="start"
+                        android:text="@string/semester"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/semester"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
-                        android:text="1 (Satu)"
+                        android:gravity="start"
+                        android:text="@string/semester"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:padding="4dp"/>
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="10dp"
-                        android:text="Tahun Pelajaran"
-                        android:textSize="14sp"
-                        android:padding="4dp"/>
+                        android:gravity="start"
+                        android:text="@string/year"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tahun_pelajaran"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="4dp"
                         android:layout_marginBottom="20dp"
-                        android:text="2021/2022"
+                        android:gravity="start"
+                        android:text="@string/year"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:padding="4dp"/>
-
-
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -372,6 +267,8 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="@color/background"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:itemIconTint="@drawable/color_state"
         app:itemTextColor="@drawable/color_state"
         app:menu="@menu/menu_bottom_nav" />

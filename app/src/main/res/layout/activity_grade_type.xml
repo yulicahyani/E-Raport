@@ -155,6 +155,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         android:background="@color/background"
         app:itemIconTint="@drawable/color_state"
         app:itemTextColor="@drawable/color_state"

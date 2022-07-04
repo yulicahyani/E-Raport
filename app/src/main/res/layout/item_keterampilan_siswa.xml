@@ -24,7 +24,7 @@
             android:layout_marginTop="22dp"
             android:text="@string/name_kd"
             android:textColor="@color/nav_unselected"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
             android:layout_marginTop="4dp"
             android:text="@string/keterampilan"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_name_kd" />
 

@@ -27,7 +27,7 @@ class InputNilaiActivity : AppCompatActivity(), View.OnClickListener {
         actionBar?.title = "Input Nilai"
 
         val item = activityInputNilaiBinding.navigation.menu.findItem(R.id.nav_input_nilai)
-        item.setChecked(true)
+        item.isChecked = true
         navigationListener()
 
         activityInputNilaiBinding.cdSpiritual.setOnClickListener(this)

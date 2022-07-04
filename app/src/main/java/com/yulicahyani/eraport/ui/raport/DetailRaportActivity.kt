@@ -47,7 +47,7 @@ class DetailRaportActivity : AppCompatActivity() {
         actionBar?.title = "Raport"
 
         val item = detailRaportBinding.navigation.menu.findItem(R.id.nav_raport)
-        item.setChecked(true)
+        item.isChecked = true
         navigationListener()
 
         prefHelper = PrefHelper(this)

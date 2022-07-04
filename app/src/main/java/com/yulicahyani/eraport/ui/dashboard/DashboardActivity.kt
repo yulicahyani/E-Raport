@@ -22,13 +22,14 @@ class DashboardActivity : AppCompatActivity() {
         activityDashboardBinding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(activityDashboardBinding.root)
 
+        supportActionBar?.hide()
         val item = activityDashboardBinding.navigation.menu.findItem(R.id.nav_dashboard)
         item.isChecked = true
         navigationListener()
 
         prefHelper = PrefHelper(this)
         val fullName = StringBuilder()
-        activityDashboardBinding.tvNama.text = fullName.append(prefHelper.getString(Constant.PREF_FIRSTNAME)).append(" ").append(prefHelper.getString(Constant.PREF_LASTNAME))
+        activityDashboardBinding.tvNama.text = fullName.append("Hai, ").append(prefHelper.getString(Constant.PREF_FIRSTNAME)).append("!")
 
 
         activityDashboardBinding.user.setOnClickListener {
