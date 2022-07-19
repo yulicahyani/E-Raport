@@ -83,4 +83,15 @@
     <string name="name_teacher">Nama Guru</string>
     <string name="kompetensi_dasar">A. Kompetensi Sikap</string>
     <string name="save">Save</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_onboarding_one">SIRAM menawarkan kemudahan bagi guru dalam memberikan nilai kepada siswa dari mana saja melalaui smartphone</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="praktis">Praktis</string>
+    <string name="terintegrasi">Terintegrasi</string>
+    <string name="tv_desc_ob_second">SIRAM dapat diintegrasikan dengan website untuk memantau hasil raport siswa kapan saja</string>
+    <string name="mulai">Mulai</string>
+    <string name="ringan">Ringan</string>
+    <string name="tv_desc_ob_third">SIRAM termasuk aplikasi yang ringan karena semua data raport disimpan pada server online</string>
 </resources>

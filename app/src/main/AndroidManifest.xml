@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ERaport"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.splashscreen.SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:exported="true">
+        <activity
+            android:name=".ui.onboarding.OnBoardingActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,8 +47,7 @@
         <activity android:name=".ui.profil.EditProfilActivity" />
         <activity android:name=".ui.raport.RaportActivity" />
         <activity android:name=".ui.profil.ProfilActivity" />
-        <activity android:name=".ui.login.LoginActivity">
-        </activity>
+        <activity android:name=".ui.login.LoginActivity"></activity>
         <activity android:name=".ui.inputnilai.InputNilaiActivity" />
         <activity android:name=".ui.datautama.DataUtamaActivity" />
         <activity android:name=".ui.dashboard.DashboardActivity" />
