@@ -94,4 +94,7 @@
     <string name="mulai">Mulai</string>
     <string name="ringan">Ringan</string>
     <string name="tv_desc_ob_third">SIRAM termasuk aplikasi yang ringan karena semua data raport disimpan pada server online</string>
+    <string name="countuser">0 User</string>
+    <string name="countmapel">0 Mapel</string>
+    <string name="count_siswa">0 Siswa</string>
 </resources>

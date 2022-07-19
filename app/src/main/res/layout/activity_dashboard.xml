@@ -35,7 +35,8 @@
                     android:src="@drawable/ic_account"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/tv_nama"
@@ -53,6 +54,99 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/count_eRaport"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_mapel"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/ic_book"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/img_siswa"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="70dp"
+                        android:src="@drawable/ic_many_people"
+                        app:layout_constraintEnd_toStartOf="@+id/img_mapel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/img_user"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/ic_user2"
+                        app:layout_constraintStart_toEndOf="@+id/img_mapel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/count_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/countuser"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/img_user"
+                        app:layout_constraintStart_toStartOf="@+id/img_user"
+                        app:layout_constraintTop_toBottomOf="@id/img_user" />
+
+                    <TextView
+                        android:id="@+id/count_mapel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/countmapel"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/img_mapel"
+                        app:layout_constraintStart_toStartOf="@+id/img_mapel"
+                        app:layout_constraintTop_toBottomOf="@id/img_mapel" />
+
+                    <TextView
+                        android:id="@+id/count_siswa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/count_siswa"
+                        android:textColor="@color/dark_blue"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/img_siswa"
+                        app:layout_constraintStart_toStartOf="@+id/img_siswa"
+                        app:layout_constraintTop_toBottomOf="@id/img_siswa" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/tetang_eRaport"
@@ -100,6 +194,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/title_about" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/tetang_menu"
