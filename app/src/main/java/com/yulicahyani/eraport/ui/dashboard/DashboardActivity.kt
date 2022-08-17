@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.yulicahyani.eraport.R
 import com.yulicahyani.eraport.data.source.remote.api.ApiConfig
 import com.yulicahyani.eraport.data.source.remote.response.MapelResponse
@@ -38,12 +39,18 @@ class DashboardActivity : AppCompatActivity() {
         prefHelper = PrefHelper(this)
         val fullName = StringBuilder()
         activityDashboardBinding.tvNama.text = fullName.append("Hai, ").append(prefHelper.getString(Constant.PREF_FIRSTNAME)).append("!")
+        activityDashboardBinding.smCount.startShimmer()
 
         //Count Dashboard
         ApiConfig.getApiService().getMapel().enqueue(object : Callback<MapelResponse> {
             override fun onResponse(call: Call<MapelResponse>, response: Response<MapelResponse>) {
                 if (response.isSuccessful){
                     if (response.body()?.status == 1){
+                        activityDashboardBinding.smCount.apply {
+                            stopShimmer()
+                            visibility = View.GONE
+                        }
+                        activityDashboardBinding.layoutCount.visibility = View.VISIBLE
                         val countStringMapel = StringBuilder()
                         activityDashboardBinding.countMapel.text = countStringMapel.append(response.body()?.mapels?.size.toString()).append(" ").append("Mapel")
                     }

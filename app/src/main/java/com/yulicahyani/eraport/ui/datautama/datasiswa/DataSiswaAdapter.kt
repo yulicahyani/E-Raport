@@ -1,14 +1,12 @@
 package com.yulicahyani.eraport.ui.datautama.datasiswa
 
-import android.content.Intent
-import android.text.TextUtils
+
 import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import android.view.ViewGroup
 import com.yulicahyani.eraport.data.source.remote.response.ResultsSiswa
 import com.yulicahyani.eraport.databinding.ItemDataSiswaBinding
-import com.yulicahyani.eraport.ui.datautama.DataUtamaActivity
+
 
 class DataSiswaAdapter : RecyclerView.Adapter<DataSiswaAdapter.SiswaViewHolder>() {
 

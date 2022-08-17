@@ -122,8 +122,7 @@ class TambahDataSiswaActivity : AppCompatActivity() {
         val semester = activityTambahDataSiswaBinding.semesterEt.text.toString().toInt()
         val tahun_ajaran = activityTambahDataSiswaBinding.tahunPelajaranEt.text.toString()
 
-        if (id_sekolah != null && username != null && password != null && nis != null && nisn != null && nama_siswa != null && nama_panggilan != null
-            && ttl != null && jenis_kelamin != null && agama != null && alamat != null && kelas != null && semester != null && tahun_ajaran != null) {
+        if (username != null && password != null && nis != null && nisn != null && nama_siswa != null && nama_panggilan != null && ttl != null && jenis_kelamin != null && agama != null && alamat != null && kelas != null && semester != null && tahun_ajaran != null) {
             viewModel.addDataSiswa(
                 id_sekolah,
                 username,
