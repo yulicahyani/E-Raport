@@ -3,10 +3,10 @@ The E-Raport repository is the result of the SIRAM application development. SIRA
 
 ## Features
 
-- Dashboard    : Serves to display general information about the application
-- Data Utama   : Serves to manage subject data (mapel), student data, teacher data (user).
-- Input Nilai  : Serves to give grade to students in each subject.
-- Raport       : Serves to view reports on student learning outcomes.
+- ***Dashboard***    : Serves to display general information about the application
+- ***Data Utama***   : Serves to manage subject data (mapel), student data, teacher data (user).
+- ***Input Nilai***  : Serves to give grade to students in each subject.
+- ***Raport***       : Serves to view reports on student learning outcomes.
 
 ## User Interface
 <p align="left">
